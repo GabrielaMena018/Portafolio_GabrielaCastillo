@@ -1,848 +1,2605 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Gabriela Isabel Castillo Mena — Portafolio</title>
-<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="img/game-development.png" type="image/x-icon">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --window:#f0ede4;--wborder:#b8b0a0;
-  --wbar:linear-gradient(180deg,#e8e4da,#ddd8ce);
-  --ink:#3a3228;--ink2:#7a6e62;--ink3:#b0a898;
-  --pink:#f4b8c8;--peach:#f4d0b0;--mint:#b8e8d0;
-  --lav:#c8c0e8;--yellow:#f4e8a0;--blue:#a0c8e8;
-  --red-btn:#e87060;--yel-btn:#f0c050;--grn-btn:#80cc80;
-  --mono:'IBM Plex Mono',monospace;--pixel:'VT323',monospace;--sans:'IBM Plex Sans',sans-serif;
-  --taskbar-h:54px;
-}
-html,body{height:100%;overflow:hidden}
-body{font-family:var(--sans);font-size:14px;color:var(--ink);display:flex;flex-direction:column;height:100vh;overflow:hidden;user-select:none;-webkit-user-select:none}
 
-/* ══════════════════════════════════
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Gabriela Isabel Castillo Mena — Portafolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --window: #f0ede4;
+      --wborder: #b8b0a0;
+      --wbar: linear-gradient(180deg, #e8e4da, #ddd8ce);
+      --ink: #3a3228;
+      --ink2: #7a6e62;
+      --ink3: #b0a898;
+      --pink: #f4b8c8;
+      --peach: #f4d0b0;
+      --mint: #b8e8d0;
+      --lav: #c8c0e8;
+      --yellow: #f4e8a0;
+      --blue: #a0c8e8;
+      --red-btn: #e87060;
+      --yel-btn: #f0c050;
+      --grn-btn: #80cc80;
+      --mono: 'IBM Plex Mono', monospace;
+      --pixel: 'VT323', monospace;
+      --sans: 'IBM Plex Sans', sans-serif;
+      --taskbar-h: 54px;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden
+    }
+
+    body {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none
+    }
+
+    /* ══════════════════════════════════
    DESKTOP BACKGROUND
 ══════════════════════════════════ */
-#desktop{flex:1;position:relative;overflow:hidden;
-  background:radial-gradient(ellipse 80% 40% at 50% 0%,#e8f4fb 0%,transparent 60%),
-             linear-gradient(180deg,#c8dfe8 0%,#d4e8c2 82%,#c0d09a 100%);
-  background-size:cover;background-position:center;transition:background 0.4s}
-#desktop.has-bg{background:none}
-#desktop-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:none}
-#desktop.has-bg #desktop-bg-img{display:block}
-#desktop-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,0);transition:background 0.3s}
+    #desktop {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 40% at 50% 0%, #e8f4fb 0%, transparent 60%),
+        linear-gradient(180deg, #c8dfe8 0%, #d4e8c2 82%, #c0d09a 100%);
+      background-size: cover;
+      background-position: center;
+      transition: background 0.4s
+    }
 
-/* CLOUDS */
-.cloud{position:absolute;border-radius:50px;background:rgba(255,255,255,0.7);pointer-events:none;z-index:2;transition:opacity 0.6s ease}
-.c1{width:130px;height:38px;top:6%;left:9%}.c1::before{content:'';position:absolute;width:72px;height:58px;background:inherit;border-radius:50%;top:-30px;left:20px}
-.c2{width:95px;height:30px;top:10%;right:14%}.c2::before{content:'';position:absolute;width:55px;height:44px;background:inherit;border-radius:50%;top:-24px;left:16px}
-.c3{width:72px;height:24px;top:18%;left:50%}.c3::before{content:'';position:absolute;width:42px;height:34px;background:inherit;border-radius:50%;top:-18px;left:12px}
-#desktop.has-bg .cloud,#desktop.no-clouds .cloud{opacity:0;pointer-events:none}
+    #desktop.has-bg {
+      background: none
+    }
 
-/* ══════════════════════════════════
+    #desktop-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      display: none
+    }
+
+    #desktop.has-bg #desktop-bg-img {
+      display: block
+    }
+
+    #desktop-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.3s
+    }
+
+    /* CLOUDS */
+    .cloud {
+      position: absolute;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.6s ease
+    }
+
+    .c1 {
+      width: 130px;
+      height: 38px;
+      top: 6%;
+      left: 9%
+    }
+
+    .c1::before {
+      content: '';
+      position: absolute;
+      width: 72px;
+      height: 58px;
+      background: inherit;
+      border-radius: 50%;
+      top: -30px;
+      left: 20px
+    }
+
+    .c2 {
+      width: 95px;
+      height: 30px;
+      top: 10%;
+      right: 14%
+    }
+
+    .c2::before {
+      content: '';
+      position: absolute;
+      width: 55px;
+      height: 44px;
+      background: inherit;
+      border-radius: 50%;
+      top: -24px;
+      left: 16px
+    }
+
+    .c3 {
+      width: 72px;
+      height: 24px;
+      top: 18%;
+      left: 50%
+    }
+
+    .c3::before {
+      content: '';
+      position: absolute;
+      width: 42px;
+      height: 34px;
+      background: inherit;
+      border-radius: 50%;
+      top: -18px;
+      left: 12px
+    }
+
+    #desktop.has-bg .cloud,
+    #desktop.no-clouds .cloud {
+      opacity: 0;
+      pointer-events: none
+    }
+
+    /* ══════════════════════════════════
    DESKTOP ICONS (shown on desktop only)
 ══════════════════════════════════ */
-.d-icons{position:absolute;left:14px;top:14px;display:flex;flex-direction:column;gap:12px;z-index:10}
-.d-icon{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;width:64px;transition:transform 0.15s;-webkit-tap-highlight-color:transparent}
-.d-icon:hover{transform:scale(1.08)}
-.d-icon:active{transform:scale(0.93)}
-.d-icon .ibox{width:44px;height:44px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.13);display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:0 2px 6px rgba(0,0,0,0.10);overflow:hidden}
-.d-icon .ibox img{width:100%;height:100%;object-fit:cover;border-radius:8px}
-.d-icon .ilabel{font-family:var(--mono);font-size:9px;color:#fff;text-align:center;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.7),0 0 8px rgba(0,0,0,0.4)}
-.d-icon.active .ibox{outline:2px solid #5080c0;outline-offset:2px}
-.r-icons{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:12px;z-index:10}
-.r-icon{display:flex;flex-direction:column;align-items:center;gap:3px;width:56px}
-.r-icon .ibox{width:42px;height:42px;border-radius:10px;border:1.5px solid rgba(0,0,0,0.10);display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 2px 5px rgba(0,0,0,0.09)}
-.r-icon .ilabel{font-family:var(--mono);font-size:9px;color:#fff;text-align:center;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,0.7)}
+    .d-icons {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 10
+    }
 
-/* ══════════════════════════════════
+    .d-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      width: 64px;
+      transition: transform 0.15s;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .d-icon:hover {
+      transform: scale(1.08)
+    }
+
+    .d-icon:active {
+      transform: scale(0.93)
+    }
+
+    .d-icon .ibox {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(0, 0, 0, 0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+      overflow: hidden
+    }
+
+    .d-icon .ibox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px
+    }
+
+    .d-icon .ilabel {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.3;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 0 8px rgba(0, 0, 0, 0.4)
+    }
+
+    .d-icon.active .ibox {
+      outline: 2px solid #5080c0;
+      outline-offset: 2px
+    }
+
+    .r-icons {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 10
+    }
+
+    .r-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      width: 56px
+    }
+
+    .r-icon .ibox {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(0, 0, 0, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09)
+    }
+
+    .r-icon .ilabel {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.2;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7)
+    }
+
+    /* ══════════════════════════════════
    WINDOW BASE
 ══════════════════════════════════ */
-.win{
-  position:absolute;background:var(--window);
-  border:1.5px solid var(--wborder);border-radius:10px;
-  box-shadow:4px 6px 0 rgba(80,60,40,0.12),0 2px 20px rgba(0,0,0,0.10);
-  display:none;flex-direction:column;z-index:20;
-  width:520px;max-width:calc(100vw - 90px);
-}
-.win.open{display:flex}
-.win.focused{z-index:30;box-shadow:5px 8px 0 rgba(80,60,40,0.18),0 4px 28px rgba(0,0,0,0.14)}
-.wbar{display:flex;align-items:center;gap:6px;padding:7px 12px;background:var(--wbar);border-bottom:1.5px solid var(--wborder);border-radius:10px 10px 0 0;position:relative;cursor:move;flex-shrink:0;touch-action:none}
-.wtitle{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ink2);white-space:nowrap;pointer-events:none}
-.wbtn{width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,0.18);flex-shrink:0;cursor:pointer;transition:filter 0.1s;-webkit-tap-highlight-color:transparent}
-.wbtn:hover{filter:brightness(0.8)}
-.wbtn.close{background:var(--red-btn)}.wbtn.min{background:var(--yel-btn)}.wbtn.max{background:var(--grn-btn)}
-.wbody{padding:1.1rem;overflow-y:auto;max-height:68vh;-webkit-overflow-scrolling:touch}
+    .win {
+      position: absolute;
+      background: var(--window);
+      border: 1.5px solid var(--wborder);
+      border-radius: 10px;
+      box-shadow: 4px 6px 0 rgba(80, 60, 40, 0.12), 0 2px 20px rgba(0, 0, 0, 0.10);
+      display: none;
+      flex-direction: column;
+      z-index: 20;
+      width: 520px;
+      max-width: calc(100vw - 90px);
+    }
 
-/* ══════════════════════════════════
+    .win.open {
+      display: flex
+    }
+
+    .win.focused {
+      z-index: 30;
+      box-shadow: 5px 8px 0 rgba(80, 60, 40, 0.18), 0 4px 28px rgba(0, 0, 0, 0.14)
+    }
+
+    .wbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: var(--wbar);
+      border-bottom: 1.5px solid var(--wborder);
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      cursor: move;
+      flex-shrink: 0;
+      touch-action: none
+    }
+
+    .wtitle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink2);
+      white-space: nowrap;
+      pointer-events: none
+    }
+
+    .wbtn {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: filter 0.1s;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .wbtn:hover {
+      filter: brightness(0.8)
+    }
+
+    .wbtn.close {
+      background: var(--red-btn)
+    }
+
+    .wbtn.min {
+      background: var(--yel-btn)
+    }
+
+    .wbtn.max {
+      background: var(--grn-btn)
+    }
+
+    .wbody {
+      padding: 1.1rem;
+      overflow-y: auto;
+      max-height: 68vh;
+      -webkit-overflow-scrolling: touch
+    }
+
+    /* ══════════════════════════════════
    MOBILE OVERLAY NAV
 ══════════════════════════════════ */
-#mobile-nav{display:none;position:absolute;inset:0;z-index:50;flex-direction:column;background:var(--window)}
-#mobile-nav.open{display:flex}
-#mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--wbar);border-bottom:1.5px solid var(--wborder);flex-shrink:0}
-#mobile-nav-title{font-family:var(--pixel);font-size:22px;color:var(--ink)}
-#mobile-nav-close{background:var(--red-btn);border:1px solid rgba(0,0,0,0.15);border-radius:50%;width:18px;height:18px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-#mobile-nav-body{flex:1;overflow-y:auto;padding:1rem;-webkit-overflow-scrolling:touch}
+    #mobile-nav {
+      display: none;
+      position: absolute;
+      inset: 0;
+      z-index: 50;
+      flex-direction: column;
+      background: var(--window)
+    }
 
-/* ══════════════════════════════════
+    #mobile-nav.open {
+      display: flex
+    }
+
+    #mobile-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: var(--wbar);
+      border-bottom: 1.5px solid var(--wborder);
+      flex-shrink: 0
+    }
+
+    #mobile-nav-title {
+      font-family: var(--pixel);
+      font-size: 22px;
+      color: var(--ink)
+    }
+
+    #mobile-nav-close {
+      background: var(--red-btn);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    #mobile-nav-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      -webkit-overflow-scrolling: touch
+    }
+
+    /* ══════════════════════════════════
    CONTENT STYLES (shared)
 ══════════════════════════════════ */
-.win-section-title{font-family:var(--pixel);font-size:24px;color:var(--ink);margin-bottom:.9rem;border-bottom:1.5px dashed rgba(0,0,0,0.1);padding-bottom:5px}
-.hero-inner{display:flex;gap:1.2rem;align-items:flex-start}
-.hero-pic{width:90px;height:75px;flex-shrink:0;background:var(--blue);border:1.5px solid var(--wborder);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:30px;gap:3px;overflow:hidden}
-.hero-pic img{width:100%;height:100%;object-fit:cover}
-.hero-h1{font-family:var(--pixel);font-size:22px;color:var(--ink);line-height:1.05;margin-bottom:3px}
-.hero-sub{font-family:var(--mono);font-size:10px;color:var(--ink2);margin-bottom:10px}
-.feat-list{list-style:none}
-.feat-list li{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;color:var(--ink2);padding:4px 0;border-bottom:1px dashed rgba(0,0,0,0.08)}
-.feat-list li:last-child{border-bottom:none}
-.feat-ico{width:24px;height:24px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;border:1px solid rgba(0,0,0,0.1);flex-shrink:0}
-.hero-btns{display:flex;gap:7px;margin-top:.9rem;flex-wrap:wrap}
-.rbtn{font-family:var(--mono);font-size:10px;padding:5px 14px;border-radius:4px;cursor:pointer;border:1.5px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);color:var(--ink);transition:filter 0.1s;-webkit-tap-highlight-color:transparent}
-.rbtn:hover{filter:brightness(0.95)}
-.rbtn.primary{background:linear-gradient(180deg,#a0c8e8,#80acd0);border-color:#6090b8;color:#1a2a3a}
-.info-rows{display:flex;flex-direction:column}
-.info-r{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px dashed rgba(0,0,0,0.09);font-family:var(--mono);font-size:10px;flex-wrap:wrap;gap:4px}
-.info-r:last-child{border-bottom:none}.info-r .lbl{color:var(--ink3)}.info-r .val{color:var(--ink);font-weight:500;text-align:right}
-.available{color:#3a8a4a!important}
-.about-txt{font-family:var(--mono);font-size:10px;color:var(--ink2);line-height:1.7;margin-bottom:.9rem}
-.skill-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:.4rem;margin-bottom:.9rem}
-.chip{display:flex;align-items:center;gap:5px;background:white;border:1.5px solid var(--wborder);border-radius:5px;padding:3px 8px;font-family:var(--mono);font-size:9px;color:var(--ink)}
-.filter-bar{display:flex;gap:6px;margin-bottom:.9rem;flex-wrap:wrap}
-.fbtn{font-family:var(--mono);font-size:10px;padding:4px 11px;border-radius:4px;cursor:pointer;border:1.5px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);color:var(--ink2);transition:all 0.15s;-webkit-tap-highlight-color:transparent}
-.fbtn.active,.fbtn:hover{background:linear-gradient(180deg,#c8c0e8,#b0a8d8);border-color:#9088b8;color:var(--ink)}
-.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:9px}
-.gcard{background:white;border:1.5px solid var(--wborder);border-radius:8px;overflow:hidden;transition:transform 0.15s,box-shadow 0.15s}
-.gcard:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.10)}
-.gthumb{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px;border-bottom:1.5px solid var(--wborder);position:relative;overflow:hidden;cursor:pointer}
-.gthumb img{width:100%;height:100%;object-fit:cover;display:block}
-.gthumb .noimg{display:flex;flex-direction:column;align-items:center;gap:3px;pointer-events:none}
-.gthumb .hint{font-size:8px;font-family:var(--mono);color:var(--ink3)}
-.gthumb .gi-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);display:none;align-items:center;justify-content:center;font-size:18px}
-.gthumb:hover .gi-overlay{display:flex}
-.gbody{padding:.6rem}
-.gtag{display:inline-block;font-family:var(--mono);font-size:8px;font-weight:500;padding:2px 6px;border-radius:3px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em}
-.t2d{background:var(--pink);color:#6a3040;border:1px solid #e0a0b0}
-.t3d{background:var(--lav);color:#3a3060;border:1px solid #a8a0d0}
-.troblox{background:var(--yellow);color:#5a4a10;border:1px solid #d8c870}
-.tnarr{background:var(--peach);color:#6a4010;border:1px solid #d8b080}
-.tweb{background:var(--mint);color:#1a5a3a;border:1px solid #80c8a0}
-.gname{font-family:var(--pixel);font-size:15px;color:var(--ink);margin-bottom:2px}
-.gdesc{font-family:var(--mono);font-size:9px;color:var(--ink2);line-height:1.5;margin-bottom:4px}
-.gtags-row{display:flex;flex-wrap:wrap;gap:3px}
-.gtag-mini{font-family:var(--mono);font-size:8px;padding:1px 5px;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.09);border-radius:3px;color:var(--ink3)}
-[data-hidden="true"]{display:none!important}
-.proj-list{display:flex;flex-direction:column;gap:9px}
-.pcard{background:white;border:1.5px solid var(--wborder);border-radius:7px;padding:.8rem;display:flex;align-items:flex-start;gap:9px}
-.pcard .pico{font-size:22px;flex-shrink:0}.pcard .pname{font-family:var(--pixel);font-size:16px;color:var(--ink);margin-bottom:2px}
-.pcard .pdesc{font-family:var(--mono);font-size:9px;color:var(--ink2);margin-bottom:4px;line-height:1.5}
-.ptags{display:flex;gap:4px;flex-wrap:wrap}.ptag{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:10px;border:1px solid rgba(0,0,0,0.09)}
-.contact-chips{display:flex;flex-wrap:wrap;gap:8px}
-.cchip{display:flex;align-items:center;gap:6px;background:white;border:1.5px solid var(--wborder);border-radius:6px;padding:6px 12px;font-family:var(--mono);font-size:10px;color:var(--ink2);text-decoration:none;transition:background 0.15s}
-.cchip:hover,.cchip:active{background:var(--mint);color:var(--ink)}
-.contact-msg{font-family:var(--mono);font-size:10px;color:var(--ink2);line-height:1.7;margin-bottom:.9rem}
+    .win-section-title {
+      font-family: var(--pixel);
+      font-size: 24px;
+      color: var(--ink);
+      margin-bottom: .9rem;
+      border-bottom: 1.5px dashed rgba(0, 0, 0, 0.1);
+      padding-bottom: 5px
+    }
 
-/* CONFIG / ADMIN shared */
-.cfg-tabs,.adm-tabs{display:flex;gap:5px;margin-bottom:.9rem;flex-wrap:wrap}
-.cfg-tab,.adm-tab{font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:4px;cursor:pointer;border:1.5px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);color:var(--ink2);-webkit-tap-highlight-color:transparent}
-.cfg-tab.active{background:linear-gradient(180deg,#f4e8a0,#e8d890);border-color:#c8b840;color:var(--ink)}
-.adm-tab.active{background:linear-gradient(180deg,#c8c0e8,#b0a8d8);border-color:#9088b8;color:var(--ink)}
-.cfg-panel,.adm-panel{display:none}
-.cfg-panel.active,.adm-panel.active{display:block}
-.cfg-section{margin-bottom:1rem}
-.cfg-label,.adm-section-label{font-family:var(--mono);font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
-.cfg-grid-bg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:9px}
-.bg-preset{aspect-ratio:16/9;border-radius:6px;border:2px solid transparent;cursor:pointer;overflow:hidden;transition:border-color 0.15s,transform 0.1s}
-.bg-preset:hover{transform:scale(1.04)}
-.bg-preset.selected{border-color:#5080c0}
-.bg-preset span{display:block;width:100%;height:100%}
-.bg-upload-area{border:2px dashed var(--wborder);border-radius:8px;padding:.9rem;text-align:center;cursor:pointer;transition:background 0.15s;font-family:var(--mono);font-size:10px;color:var(--ink2);-webkit-tap-highlight-color:transparent}
-.bg-upload-area:hover,.bg-upload-area:active{background:rgba(0,0,0,0.04)}
-.big-icon{font-size:26px;display:block;margin-bottom:5px}
-.opacity-row{display:flex;align-items:center;gap:9px}
-.opacity-row label{font-family:var(--mono);font-size:9px;color:var(--ink2);white-space:nowrap}
-.opacity-row input[type=range]{flex:1}
-.opacity-row span{font-family:var(--mono);font-size:9px;color:var(--ink);min-width:26px;text-align:right}
-.ico-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.ico-slot{background:white;border:1.5px solid var(--wborder);border-radius:8px;padding:.65rem;display:flex;flex-direction:column;align-items:center;gap:5px}
-.ico-preview{width:42px;height:42px;border-radius:9px;border:1.5px solid var(--wborder);display:flex;align-items:center;justify-content:center;font-size:20px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.ico-preview img{width:100%;height:100%;object-fit:cover;border-radius:7px}
-.ico-name{font-family:var(--mono);font-size:8px;color:var(--ink2);text-align:center}
-.ico-btn{font-family:var(--mono);font-size:8px;padding:2px 7px;border-radius:3px;cursor:pointer;border:1px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);color:var(--ink)}
-.game-img-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.game-img-slot{background:white;border:1.5px solid var(--wborder);border-radius:8px;overflow:hidden}
-.game-img-thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(0,0,0,0.04);cursor:pointer;position:relative;overflow:hidden;border-bottom:1px solid var(--wborder)}
-.game-img-thumb img{width:100%;height:100%;object-fit:cover}
-.game-img-thumb .gi-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);display:none;align-items:center;justify-content:center;font-size:18px}
-.game-img-thumb:hover .gi-overlay,.game-img-thumb:active .gi-overlay{display:flex}
-.game-img-label{font-family:var(--mono);font-size:9px;color:var(--ink2);padding:4px 7px}
-.color-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:7px}
-.color-row{display:flex;align-items:center;gap:7px}
-.color-row label{font-family:var(--mono);font-size:9px;color:var(--ink2);flex:1}
-.color-row input[type=color]{width:34px;height:26px;border:1.5px solid var(--wborder);border-radius:5px;cursor:pointer;padding:1px;background:white}
-.save-btn{width:100%;padding:7px;border-radius:5px;border:1.5px solid #3a8a4a;background:linear-gradient(180deg,#b0e0b8,#80c890);font-family:var(--mono);font-size:10px;color:#1a4a20;cursor:pointer;margin-top:4px;-webkit-tap-highlight-color:transparent}
-.color-reset-btn{width:100%;padding:6px;border-radius:5px;border:1.5px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);font-family:var(--mono);font-size:9px;color:var(--ink2);cursor:pointer;margin-top:5px}
-.edit-field{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
-.edit-field label,.pf-field label{font-family:var(--mono);font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
-.edit-field input,.edit-field textarea,.pf-field input,.pf-field select,.pf-field textarea{padding:6px 8px;border:1.5px solid var(--wborder);border-radius:5px;font-family:var(--mono);font-size:10px;color:var(--ink);background:#faf9f5;outline:none;resize:vertical;transition:border-color 0.15s;user-select:text;-webkit-user-select:text;width:100%}
-.edit-field input:focus,.edit-field textarea:focus,.pf-field input:focus,.pf-field select:focus,.pf-field textarea:focus{border-color:#9088b8}
-.pf-field{display:flex;flex-direction:column;gap:3px}
-.pf-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.proj-form{display:flex;flex-direction:column;gap:8px;margin-bottom:.9rem}
-.proj-add-btn{padding:7px;border-radius:5px;border:1.5px solid #3a8a4a;background:linear-gradient(180deg,#b0e0b8,#80c890);font-family:var(--mono);font-size:10px;color:#1a4a20;cursor:pointer;width:100%}
-.adm-proj-list{display:flex;flex-direction:column;gap:7px;max-height:180px;overflow-y:auto;margin-top:5px}
-.adm-pitem{background:white;border:1.5px solid var(--wborder);border-radius:6px;padding:7px 9px;display:flex;align-items:center;gap:7px}
-.adm-pitem .ap-icon{font-size:16px;flex-shrink:0}.adm-pitem .ap-info{flex:1}
-.adm-pitem .ap-name{font-family:var(--pixel);font-size:14px;color:var(--ink)}.adm-pitem .ap-type{font-family:var(--mono);font-size:8px;color:var(--ink3)}
-.adm-pitem .ap-del{background:none;border:none;cursor:pointer;font-size:13px;color:#c04040;padding:2px 5px;border-radius:3px}
-.logout-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;padding-bottom:.65rem;border-bottom:1.5px dashed rgba(0,0,0,0.1);flex-wrap:wrap;gap:6px}
-.logout-row span{font-family:var(--mono);font-size:10px;color:var(--ink2)}
-.logout-btn{font-family:var(--mono);font-size:9px;padding:4px 11px;border-radius:4px;cursor:pointer;border:1.5px solid var(--wborder);background:linear-gradient(180deg,#f0ede4,#ddd8ce);color:var(--ink2)}
-.save-ok{font-family:var(--mono);font-size:9px;color:#3a8a4a;text-align:center;margin-top:5px;display:none}
-.save-ok.show{display:block}
+    .hero-inner {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start
+    }
 
-/* LOGIN */
-.login-box{display:flex;flex-direction:column;align-items:center}
-.login-avatar{width:54px;height:54px;border-radius:50%;background:var(--lav);border:2px solid var(--wborder);display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto .9rem}
-.login-title{font-family:var(--pixel);font-size:20px;color:var(--ink);margin-bottom:3px;text-align:center}
-.login-sub{font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:1rem;text-align:center}
-.login-field{width:100%;margin-bottom:9px}
-.login-field label{display:block;font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.06em}
-.login-field input{width:100%;padding:7px 9px;border:1.5px solid var(--wborder);border-radius:5px;font-family:var(--mono);font-size:11px;color:var(--ink);background:#faf9f5;outline:none;user-select:text;-webkit-user-select:text}
-.login-field input:focus{border-color:#9088b8}
-.login-err{font-family:var(--mono);font-size:9px;color:#c04040;background:#fce8e8;border:1px solid #f0b0b0;border-radius:4px;padding:4px 9px;margin-bottom:9px;display:none;text-align:center}
-.login-err.show{display:block}
-.login-btn{width:100%;padding:7px;border-radius:5px;border:1.5px solid #9088b8;background:linear-gradient(180deg,#c8c0e8,#b0a8d8);font-family:var(--mono);font-size:11px;color:var(--ink);cursor:pointer;margin-top:3px}
+    .hero-pic {
+      width: 90px;
+      height: 75px;
+      flex-shrink: 0;
+      background: var(--blue);
+      border: 1.5px solid var(--wborder);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      gap: 3px;
+      overflow: hidden
+    }
 
-/* ══════════════════════════════════
+    .hero-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .hero-h1 {
+      font-family: var(--pixel);
+      font-size: 22px;
+      color: var(--ink);
+      line-height: 1.05;
+      margin-bottom: 3px
+    }
+
+    .hero-sub {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      margin-bottom: 10px
+    }
+
+    .feat-list {
+      list-style: none
+    }
+
+    .feat-list li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.08)
+    }
+
+    .feat-list li:last-child {
+      border-bottom: none
+    }
+
+    .feat-ico {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      flex-shrink: 0
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 7px;
+      margin-top: .9rem;
+      flex-wrap: wrap
+    }
+
+    .rbtn {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 5px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      color: var(--ink);
+      transition: filter 0.1s;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .rbtn:hover {
+      filter: brightness(0.95)
+    }
+
+    .rbtn.primary {
+      background: linear-gradient(180deg, #a0c8e8, #80acd0);
+      border-color: #6090b8;
+      color: #1a2a3a
+    }
+
+    .info-rows {
+      display: flex;
+      flex-direction: column
+    }
+
+    .info-r {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.09);
+      font-family: var(--mono);
+      font-size: 10px;
+      flex-wrap: wrap;
+      gap: 4px
+    }
+
+    .info-r:last-child {
+      border-bottom: none
+    }
+
+    .info-r .lbl {
+      color: var(--ink3)
+    }
+
+    .info-r .val {
+      color: var(--ink);
+      font-weight: 500;
+      text-align: right
+    }
+
+    .available {
+      color: #3a8a4a !important
+    }
+
+    .about-txt {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      line-height: 1.7;
+      margin-bottom: .9rem
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: .4rem;
+      margin-bottom: .9rem
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 5px;
+      padding: 3px 8px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink)
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: .9rem;
+      flex-wrap: wrap
+    }
+
+    .fbtn {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 4px 11px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      color: var(--ink2);
+      transition: all 0.15s;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .fbtn.active,
+    .fbtn:hover {
+      background: linear-gradient(180deg, #c8c0e8, #b0a8d8);
+      border-color: #9088b8;
+      color: var(--ink)
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 9px
+    }
+
+    .gcard {
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.15s, box-shadow 0.15s
+    }
+
+    .gcard:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10)
+    }
+
+    .gthumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      border-bottom: 1.5px solid var(--wborder);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer
+    }
+
+    .gthumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .gthumb .noimg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      pointer-events: none
+    }
+
+    .gthumb .hint {
+      font-size: 8px;
+      font-family: var(--mono);
+      color: var(--ink3)
+    }
+
+    .gthumb .gi-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px
+    }
+
+    .gthumb:hover .gi-overlay {
+      display: flex
+    }
+
+    .gbody {
+      padding: .6rem
+    }
+
+    .gtag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 8px;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .t2d {
+      background: var(--pink);
+      color: #6a3040;
+      border: 1px solid #e0a0b0
+    }
+
+    .t3d {
+      background: var(--lav);
+      color: #3a3060;
+      border: 1px solid #a8a0d0
+    }
+
+    .troblox {
+      background: var(--yellow);
+      color: #5a4a10;
+      border: 1px solid #d8c870
+    }
+
+    .tnarr {
+      background: var(--peach);
+      color: #6a4010;
+      border: 1px solid #d8b080
+    }
+
+    .tweb {
+      background: var(--mint);
+      color: #1a5a3a;
+      border: 1px solid #80c8a0
+    }
+
+    .gname {
+      font-family: var(--pixel);
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 2px
+    }
+
+    .gdesc {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      line-height: 1.5;
+      margin-bottom: 4px
+    }
+
+    .gtags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px
+    }
+
+    .gtag-mini {
+      font-family: var(--mono);
+      font-size: 8px;
+      padding: 1px 5px;
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-radius: 3px;
+      color: var(--ink3)
+    }
+
+    [data-hidden="true"] {
+      display: none !important
+    }
+
+    .proj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px
+    }
+
+    .pcard {
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 7px;
+      padding: .8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px
+    }
+
+    .pcard .pico {
+      font-size: 22px;
+      flex-shrink: 0
+    }
+
+    .pcard .pname {
+      font-family: var(--pixel);
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 2px
+    }
+
+    .pcard .pdesc {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      margin-bottom: 4px;
+      line-height: 1.5
+    }
+
+    .ptags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap
+    }
+
+    .ptag {
+      font-family: var(--mono);
+      font-size: 8px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.09)
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .cchip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      text-decoration: none;
+      transition: background 0.15s
+    }
+
+    .cchip:hover,
+    .cchip:active {
+      background: var(--mint);
+      color: var(--ink)
+    }
+
+    .contact-msg {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      line-height: 1.7;
+      margin-bottom: .9rem
+    }
+
+    /* CONFIG / ADMIN shared */
+    .cfg-tabs,
+    .adm-tabs {
+      display: flex;
+      gap: 5px;
+      margin-bottom: .9rem;
+      flex-wrap: wrap
+    }
+
+    .cfg-tab,
+    .adm-tab {
+      font-family: var(--mono);
+      font-size: 9px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      color: var(--ink2);
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .cfg-tab.active {
+      background: linear-gradient(180deg, #f4e8a0, #e8d890);
+      border-color: #c8b840;
+      color: var(--ink)
+    }
+
+    .adm-tab.active {
+      background: linear-gradient(180deg, #c8c0e8, #b0a8d8);
+      border-color: #9088b8;
+      color: var(--ink)
+    }
+
+    .cfg-panel,
+    .adm-panel {
+      display: none
+    }
+
+    .cfg-panel.active,
+    .adm-panel.active {
+      display: block
+    }
+
+    .cfg-section {
+      margin-bottom: 1rem
+    }
+
+    .cfg-label,
+    .adm-section-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink3);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 7px
+    }
+
+    .cfg-grid-bg {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 9px
+    }
+
+    .bg-preset {
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.15s, transform 0.1s
+    }
+
+    .bg-preset:hover {
+      transform: scale(1.04)
+    }
+
+    .bg-preset.selected {
+      border-color: #5080c0
+    }
+
+    .bg-preset span {
+      display: block;
+      width: 100%;
+      height: 100%
+    }
+
+    .bg-upload-area {
+      border: 2px dashed var(--wborder);
+      border-radius: 8px;
+      padding: .9rem;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.15s;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .bg-upload-area:hover,
+    .bg-upload-area:active {
+      background: rgba(0, 0, 0, 0.04)
+    }
+
+    .big-icon {
+      font-size: 26px;
+      display: block;
+      margin-bottom: 5px
+    }
+
+    .opacity-row {
+      display: flex;
+      align-items: center;
+      gap: 9px
+    }
+
+    .opacity-row label {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      white-space: nowrap
+    }
+
+    .opacity-row input[type=range] {
+      flex: 1
+    }
+
+    .opacity-row span {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink);
+      min-width: 26px;
+      text-align: right
+    }
+
+    .ico-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px
+    }
+
+    .ico-slot {
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 8px;
+      padding: .65rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px
+    }
+
+    .ico-preview {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      border: 1.5px solid var(--wborder);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .ico-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 7px
+    }
+
+    .ico-name {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--ink2);
+      text-align: center
+    }
+
+    .ico-btn {
+      font-family: var(--mono);
+      font-size: 8px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      color: var(--ink)
+    }
+
+    .game-img-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px
+    }
+
+    .game-img-slot {
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 8px;
+      overflow: hidden
+    }
+
+    .game-img-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--wborder)
+    }
+
+    .game-img-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .game-img-thumb .gi-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px
+    }
+
+    .game-img-thumb:hover .gi-overlay,
+    .game-img-thumb:active .gi-overlay {
+      display: flex
+    }
+
+    .game-img-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      padding: 4px 7px
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+      margin-bottom: 7px
+    }
+
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .color-row label {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      flex: 1
+    }
+
+    .color-row input[type=color] {
+      width: 34px;
+      height: 26px;
+      border: 1.5px solid var(--wborder);
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 1px;
+      background: white
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 7px;
+      border-radius: 5px;
+      border: 1.5px solid #3a8a4a;
+      background: linear-gradient(180deg, #b0e0b8, #80c890);
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #1a4a20;
+      cursor: pointer;
+      margin-top: 4px;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .color-reset-btn {
+      width: 100%;
+      padding: 6px;
+      border-radius: 5px;
+      border: 1.5px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink2);
+      cursor: pointer;
+      margin-top: 5px
+    }
+
+    .edit-field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 8px
+    }
+
+    .edit-field label,
+    .pf-field label {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink3);
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .edit-field input,
+    .edit-field textarea,
+    .pf-field input,
+    .pf-field select,
+    .pf-field textarea {
+      padding: 6px 8px;
+      border: 1.5px solid var(--wborder);
+      border-radius: 5px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink);
+      background: #faf9f5;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.15s;
+      user-select: text;
+      -webkit-user-select: text;
+      width: 100%
+    }
+
+    .edit-field input:focus,
+    .edit-field textarea:focus,
+    .pf-field input:focus,
+    .pf-field select:focus,
+    .pf-field textarea:focus {
+      border-color: #9088b8
+    }
+
+    .pf-field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px
+    }
+
+    .pf-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px
+    }
+
+    .proj-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: .9rem
+    }
+
+    .proj-add-btn {
+      padding: 7px;
+      border-radius: 5px;
+      border: 1.5px solid #3a8a4a;
+      background: linear-gradient(180deg, #b0e0b8, #80c890);
+      font-family: var(--mono);
+      font-size: 10px;
+      color: #1a4a20;
+      cursor: pointer;
+      width: 100%
+    }
+
+    .adm-proj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-top: 5px
+    }
+
+    .adm-pitem {
+      background: white;
+      border: 1.5px solid var(--wborder);
+      border-radius: 6px;
+      padding: 7px 9px;
+      display: flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .adm-pitem .ap-icon {
+      font-size: 16px;
+      flex-shrink: 0
+    }
+
+    .adm-pitem .ap-info {
+      flex: 1
+    }
+
+    .adm-pitem .ap-name {
+      font-family: var(--pixel);
+      font-size: 14px;
+      color: var(--ink)
+    }
+
+    .adm-pitem .ap-type {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--ink3)
+    }
+
+    .adm-pitem .ap-del {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      color: #c04040;
+      padding: 2px 5px;
+      border-radius: 3px
+    }
+
+    .logout-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .9rem;
+      padding-bottom: .65rem;
+      border-bottom: 1.5px dashed rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .logout-row span {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2)
+    }
+
+    .logout-btn {
+      font-family: var(--mono);
+      font-size: 9px;
+      padding: 4px 11px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1.5px solid var(--wborder);
+      background: linear-gradient(180deg, #f0ede4, #ddd8ce);
+      color: var(--ink2)
+    }
+
+    .save-ok {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: #3a8a4a;
+      text-align: center;
+      margin-top: 5px;
+      display: none
+    }
+
+    .save-ok.show {
+      display: block
+    }
+
+    /* LOGIN */
+    .login-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .login-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--lav);
+      border: 2px solid var(--wborder);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto .9rem
+    }
+
+    .login-title {
+      font-family: var(--pixel);
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 3px;
+      text-align: center
+    }
+
+    .login-sub {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink3);
+      margin-bottom: 1rem;
+      text-align: center
+    }
+
+    .login-field {
+      width: 100%;
+      margin-bottom: 9px
+    }
+
+    .login-field label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--ink3);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .login-field input {
+      width: 100%;
+      padding: 7px 9px;
+      border: 1.5px solid var(--wborder);
+      border-radius: 5px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink);
+      background: #faf9f5;
+      outline: none;
+      user-select: text;
+      -webkit-user-select: text
+    }
+
+    .login-field input:focus {
+      border-color: #9088b8
+    }
+
+    .login-err {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: #c04040;
+      background: #fce8e8;
+      border: 1px solid #f0b0b0;
+      border-radius: 4px;
+      padding: 4px 9px;
+      margin-bottom: 9px;
+      display: none;
+      text-align: center
+    }
+
+    .login-err.show {
+      display: block
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 7px;
+      border-radius: 5px;
+      border: 1.5px solid #9088b8;
+      background: linear-gradient(180deg, #c8c0e8, #b0a8d8);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink);
+      cursor: pointer;
+      margin-top: 3px
+    }
+
+    /* ══════════════════════════════════
    TASKBAR
 ══════════════════════════════════ */
-#taskbar{height:var(--taskbar-h);background:rgba(240,237,228,0.95);border-top:1.5px solid var(--wborder);display:flex;align-items:center;justify-content:center;gap:2px;padding:0 8px;backdrop-filter:blur(8px);flex-shrink:0;z-index:100;position:relative;overflow-x:auto;overflow-y:hidden}
-#taskbar::-webkit-scrollbar{display:none}
-.tsk-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 7px;border-radius:7px;cursor:pointer;border:none;background:transparent;transition:background 0.15s;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.tsk-btn:hover,.tsk-btn:active{background:rgba(0,0,0,0.07)}
-.tsk-btn.open-win{background:rgba(0,0,0,0.06)}
-.tsk-btn .ticon{font-size:18px;line-height:1}
-.tsk-btn .tlabel{font-family:var(--mono);font-size:8px;color:var(--ink2);white-space:nowrap}
-.tsk-sep{width:1px;height:28px;background:var(--wborder);margin:0 2px;flex-shrink:0}
-#clock{font-family:var(--mono);font-size:10px;color:var(--ink2);position:absolute;right:10px;pointer-events:none}
+    #taskbar {
+      height: var(--taskbar-h);
+      background: rgba(240, 237, 228, 0.95);
+      border-top: 1.5px solid var(--wborder);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 0 8px;
+      backdrop-filter: blur(8px);
+      flex-shrink: 0;
+      z-index: 100;
+      position: relative;
+      overflow-x: auto;
+      overflow-y: hidden
+    }
 
-/* DRAG */
-.win.dragging{opacity:.92;cursor:move}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:rgba(0,0,0,0.04);border-radius:4px}::-webkit-scrollbar-thumb{background:var(--ink3);border-radius:4px}
+    #taskbar::-webkit-scrollbar {
+      display: none
+    }
 
-/* ══════════════════════════════════
+    .tsk-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 4px 7px;
+      border-radius: 7px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      transition: background 0.15s;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .tsk-btn:hover,
+    .tsk-btn:active {
+      background: rgba(0, 0, 0, 0.07)
+    }
+
+    .tsk-btn.open-win {
+      background: rgba(0, 0, 0, 0.06)
+    }
+
+    .tsk-btn .ticon {
+      font-size: 18px;
+      line-height: 1
+    }
+
+    .tsk-btn .tlabel {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--ink2);
+      white-space: nowrap
+    }
+
+    .tsk-sep {
+      width: 1px;
+      height: 28px;
+      background: var(--wborder);
+      margin: 0 2px;
+      flex-shrink: 0
+    }
+
+    #clock {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--ink2);
+      position: absolute;
+      right: 10px;
+      pointer-events: none
+    }
+
+    /* DRAG */
+    .win.dragging {
+      opacity: .92;
+      cursor: move
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 4px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--ink3);
+      border-radius: 4px
+    }
+
+    /* ══════════════════════════════════
    RESPONSIVE — mobile
 ══════════════════════════════════ */
-@media(max-width:600px){
-  /* hide desktop icons */
-  .d-icons,.r-icons,.cloud{display:none!important}
+    @media(max-width:600px) {
 
-  /* windows fill the screen above taskbar */
-  .win{
-    position:fixed!important;
-    left:0!important;right:0!important;
-    bottom:var(--taskbar-h)!important;
-    top:0!important;
-    width:100%!important;
-    max-width:100%!important;
-    border-radius:0!important;
-    border-left:none!important;border-right:none!important;border-top:none!important;
-    max-height:none!important;
-  }
-  .wbody{max-height:calc(100vh - var(--taskbar-h) - 42px);padding:.9rem}
-  /* no drag on mobile */
-  .wbar{cursor:default;touch-action:auto}
-  /* only one window visible at a time */
-  .win.open~.win.open{display:none}
+      /* hide desktop icons */
+      .d-icons,
+      .r-icons,
+      .cloud {
+        display: none !important
+      }
 
-  /* games grid 2 col */
-  .games-grid{grid-template-columns:repeat(2,1fr)}
-  /* hero stack */
-  .hero-inner{flex-direction:column;align-items:center;text-align:center}
-  .hero-pic{width:80px;height:65px}
-  .hero-btns{justify-content:center}
-  /* pf-row stack */
-  .pf-row{grid-template-columns:1fr}
-  /* color grid 1 col */
-  .color-grid{grid-template-columns:1fr}
-  /* taskbar: smaller labels */
-  .tsk-btn .tlabel{font-size:7px}
-  .tsk-btn{padding:3px 5px}
-  #clock{display:none}
-  /* cfg presets 3 col */
-  .cfg-grid-bg{grid-template-columns:repeat(3,1fr)}
-}
+      /* windows fill the screen above taskbar */
+      .win {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: var(--taskbar-h) !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        max-height: none !important;
+      }
 
-@media(min-width:601px) and (max-width:860px){
-  .win{max-width:calc(100vw - 100px)}
-  .games-grid{grid-template-columns:repeat(2,1fr)}
-  .d-icons{gap:10px}
-  .d-icon{width:58px}
-  .d-icon .ibox{width:40px;height:40px;font-size:19px}
-}
-</style>
+      .wbody {
+        max-height: calc(100vh - var(--taskbar-h) - 42px);
+        padding: .9rem
+      }
+
+      /* no drag on mobile */
+      .wbar {
+        cursor: default;
+        touch-action: auto
+      }
+
+      /* only one window visible at a time */
+      .win.open~.win.open {
+        display: none
+      }
+
+      /* games grid 2 col */
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      /* hero stack */
+      .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .hero-pic {
+        width: 80px;
+        height: 65px
+      }
+
+      .hero-btns {
+        justify-content: center
+      }
+
+      /* pf-row stack */
+      .pf-row {
+        grid-template-columns: 1fr
+      }
+
+      /* color grid 1 col */
+      .color-grid {
+        grid-template-columns: 1fr
+      }
+
+      /* taskbar: smaller labels */
+      .tsk-btn .tlabel {
+        font-size: 7px
+      }
+
+      .tsk-btn {
+        padding: 3px 5px
+      }
+
+      #clock {
+        display: none
+      }
+
+      /* cfg presets 3 col */
+      .cfg-grid-bg {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(min-width:601px) and (max-width:860px) {
+      .win {
+        max-width: calc(100vw - 100px)
+      }
+
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .d-icons {
+        gap: 10px
+      }
+
+      .d-icon {
+        width: 58px
+      }
+
+      .d-icon .ibox {
+        width: 40px;
+        height: 40px;
+        font-size: 19px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
 
-<div id="desktop">
-  <img id="desktop-bg-img" src="" alt="">
-  <div id="desktop-overlay"></div>
+  <div id="desktop">
+    <img id="desktop-bg-img" src="" alt="">
+    <div id="desktop-overlay"></div>
 
-  <!-- LEFT ICONS -->
-  <div class="d-icons">
-    <div class="d-icon" id="ico-bienvenida" onclick="openWin('win-bienvenida','ico-bienvenida')"><div class="ibox" id="ibox-bienvenida" style="background:var(--blue)">💻</div><span class="ilabel">Inicio</span></div>
-    <div class="d-icon" id="ico-sobre" onclick="openWin('win-sobre','ico-sobre')"><div class="ibox" id="ibox-sobre" style="background:var(--mint)">👤</div><span class="ilabel">Sobre mí</span></div>
-    <div class="d-icon" id="ico-habilidades" onclick="openWin('win-habilidades','ico-habilidades')"><div class="ibox" id="ibox-habilidades" style="background:var(--lav)">⚙️</div><span class="ilabel">Skills</span></div>
-    <div class="d-icon" id="ico-juegos" onclick="openWin('win-juegos','ico-juegos')"><div class="ibox" id="ibox-juegos" style="background:var(--pink)">🎮</div><span class="ilabel">Juegos</span></div>
-    <div class="d-icon" id="ico-web" onclick="openWin('win-web','ico-web')"><div class="ibox" id="ibox-web" style="background:var(--peach)">🌐</div><span class="ilabel">Web</span></div>
-    <div class="d-icon" id="ico-contacto" onclick="openWin('win-contacto','ico-contacto')"><div class="ibox" id="ibox-contacto" style="background:var(--yellow)">📬</div><span class="ilabel">Contacto</span></div>
-    <div class="d-icon" id="ico-config" onclick="openProtected('win-config','ico-config')"><div class="ibox" id="ibox-config" style="background:var(--peach)">🎨</div><span class="ilabel">Personalizar</span></div>
-    <div class="d-icon" id="ico-admin" onclick="openAdminOrLogin()"><div class="ibox" id="ibox-admin" style="background:var(--lav)">🔐</div><span class="ilabel">Admin</span></div>
-  </div>
-
-  <!-- RIGHT DECO -->
-  <div class="r-icons">
-    <div class="r-icon"><div class="ibox" style="background:var(--blue)">☁️</div><span class="ilabel" id="r-github-lbl">GabrielaMena018</span></div>
-    <div class="r-icon"><div class="ibox" style="background:var(--peach)">🎨</div><span class="ilabel">Portfolio</span></div>
-    <div class="r-icon"><div class="ibox" style="background:var(--mint)">📁</div><span class="ilabel">Proyectos</span></div>
-    <div class="r-icon"><div class="ibox" style="background:var(--yellow)">⭐</div><span class="ilabel">El Salvador</span></div>
-  </div>
-
-  <!-- ══ BIENVENIDA ══ -->
-  <div class="win" id="win-bienvenida" style="width:500px;top:55px;left:110px">
-    <div class="wbar" onmousedown="startDrag(event,'win-bienvenida')" ontouchstart="startDragTouch(event,'win-bienvenida')">
-      <div class="wbtn close" onclick="closeWin('win-bienvenida','ico-bienvenida')"></div>
-      <div class="wbtn min" onclick="closeWin('win-bienvenida','ico-bienvenida')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">Bienvenida.exe</span>
+    <!-- LEFT ICONS -->
+    <div class="d-icons">
+      <div class="d-icon" id="ico-bienvenida" onclick="openWin('win-bienvenida','ico-bienvenida')">
+        <div class="ibox" id="ibox-bienvenida" style="background:var(--blue)">💻</div><span class="ilabel">Inicio</span>
+      </div>
+      <div class="d-icon" id="ico-sobre" onclick="openWin('win-sobre','ico-sobre')">
+        <div class="ibox" id="ibox-sobre" style="background:var(--mint)">👤</div><span class="ilabel">Sobre mí</span>
+      </div>
+      <div class="d-icon" id="ico-habilidades" onclick="openWin('win-habilidades','ico-habilidades')">
+        <div class="ibox" id="ibox-habilidades" style="background:var(--lav)">⚙️</div><span class="ilabel">Skills</span>
+      </div>
+      <div class="d-icon" id="ico-juegos" onclick="openWin('win-juegos','ico-juegos')">
+        <div class="ibox" id="ibox-juegos" style="background:var(--pink)">🎮</div><span class="ilabel">Juegos</span>
+      </div>
+      <div class="d-icon" id="ico-web" onclick="openWin('win-web','ico-web')">
+        <div class="ibox" id="ibox-web" style="background:var(--peach)">🌐</div><span class="ilabel">Web</span>
+      </div>
+      <div class="d-icon" id="ico-contacto" onclick="openWin('win-contacto','ico-contacto')">
+        <div class="ibox" id="ibox-contacto" style="background:var(--yellow)">📬</div><span
+          class="ilabel">Contacto</span>
+      </div>
+      <div class="d-icon" id="ico-config" onclick="openProtected('win-config','ico-config')">
+        <div class="ibox" id="ibox-config" style="background:var(--peach)">🎨</div><span
+          class="ilabel">Personalizar</span>
+      </div>
+      <div class="d-icon" id="ico-admin" onclick="openAdminOrLogin()">
+        <div class="ibox" id="ibox-admin" style="background:var(--lav)">🔐</div><span class="ilabel">Admin</span>
+      </div>
     </div>
-    <div class="wbody">
-      <div class="hero-inner">
-        <div class="hero-pic" id="hero-pic-wrap"><span>💻</span></div>
-        <div>
-          <div class="hero-h1" id="hero-nombre">Gabriela Isabel<br>Castillo Mena</div>
-          <div class="hero-sub" id="hero-titulo">// Técnico en Desarrollo de Software · El Salvador</div>
-          <ul class="feat-list">
-            <li><div class="feat-ico" style="background:var(--lav)">🎮</div><span>Videojuegos 2D y 3D en Unity con C#</span></li>
-            <li><div class="feat-ico" style="background:var(--mint)">🌐</div><span>Desarrollo web full-stack — Node.js y React</span></li>
-            <li><div class="feat-ico" style="background:var(--peach)">📖</div><span>Narrativa interactiva con Twine / Harlowe</span></li>
-            <li><div class="feat-ico" style="background:var(--yellow)">🟡</div><span>Mundos y juegos en Roblox Studio con Lua</span></li>
-          </ul>
-          <div class="hero-btns">
-            <button class="rbtn primary" onclick="switchTo('win-juegos','ico-juegos')">Ver juegos →</button>
-            <button class="rbtn" onclick="switchTo('win-sobre','ico-sobre')">Sobre mí</button>
-            <button class="rbtn" onclick="switchTo('win-contacto','ico-contacto')">Contacto</button>
+
+    <!-- RIGHT DECO -->
+    <div class="r-icons">
+      <div class="r-icon">
+        <div class="ibox" style="background:var(--blue)">☁️</div><span class="ilabel"
+          id="r-github-lbl">GabrielaMena018</span>
+      </div>
+      <div class="r-icon">
+        <div class="ibox" style="background:var(--peach)">🎨</div><span class="ilabel">Portfolio</span>
+      </div>
+      <div class="r-icon">
+        <div class="ibox" style="background:var(--mint)">📁</div><span class="ilabel">Proyectos</span>
+      </div>
+      <div class="r-icon">
+        <div class="ibox" style="background:var(--yellow)">⭐</div><span class="ilabel">El Salvador</span>
+      </div>
+    </div>
+
+    <!-- ══ BIENVENIDA ══ -->
+    <div class="win" id="win-bienvenida" style="width:500px;top:55px;left:110px">
+      <div class="wbar" onmousedown="startDrag(event,'win-bienvenida')"
+        ontouchstart="startDragTouch(event,'win-bienvenida')">
+        <div class="wbtn close" onclick="closeWin('win-bienvenida','ico-bienvenida')"></div>
+        <div class="wbtn min" onclick="closeWin('win-bienvenida','ico-bienvenida')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">Bienvenida.exe</span>
+      </div>
+      <div class="wbody">
+        <div class="hero-inner">
+          <div class="hero-pic" id="hero-pic-wrap"><span>💻</span></div>
+          <div>
+            <div class="hero-h1" id="hero-nombre">Gabriela Isabel<br>Castillo Mena</div>
+            <div class="hero-sub" id="hero-titulo">// Técnico en Desarrollo de Software · El Salvador</div>
+            <ul class="feat-list">
+              <li>
+                <div class="feat-ico" style="background:var(--lav)">🎮</div><span>Videojuegos 2D y 3D en Unity con
+                  C#</span>
+              </li>
+              <li>
+                <div class="feat-ico" style="background:var(--mint)">🌐</div><span>Desarrollo web full-stack — Node.js y
+                  React</span>
+              </li>
+              <li>
+                <div class="feat-ico" style="background:var(--peach)">📖</div><span>Narrativa interactiva con Twine /
+                  Harlowe</span>
+              </li>
+              <li>
+                <div class="feat-ico" style="background:var(--yellow)">🟡</div><span>Mundos y juegos en Roblox Studio
+                  con Lua</span>
+              </li>
+            </ul>
+            <div class="hero-btns">
+              <button class="rbtn primary" onclick="switchTo('win-juegos','ico-juegos')">Ver juegos →</button>
+              <button class="rbtn" onclick="switchTo('win-sobre','ico-sobre')">Sobre mí</button>
+              <button class="rbtn" onclick="switchTo('win-contacto','ico-contacto')">Contacto</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ══ SOBRE MÍ ══ -->
-  <div class="win" id="win-sobre" style="width:390px;top:75px;left:155px">
-    <div class="wbar" onmousedown="startDrag(event,'win-sobre')" ontouchstart="startDragTouch(event,'win-sobre')">
-      <div class="wbtn close" onclick="closeWin('win-sobre','ico-sobre')"></div>
-      <div class="wbtn min" onclick="closeWin('win-sobre','ico-sobre')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">readme.txt</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Sobre mí</div>
-      <p class="about-txt" id="sobre-bio">Soy Gabriela Isabel Castillo Mena, Técnico en Desarrollo de Software. Me especializo en videojuegos 2D y 3D, aplicaciones web y narrativa interactiva. Construyo experiencias digitales desde El Salvador.</p>
-      <div class="info-rows">
-        <div class="info-r"><span class="lbl">Nombre</span><span class="val" id="info-nombre">Gabriela I. Castillo Mena</span></div>
-        <div class="info-r"><span class="lbl">Título</span><span class="val" id="info-titulo">Técnico en Desarrollo de SW</span></div>
-        <div class="info-r"><span class="lbl">Game Dev</span><span class="val">Unity 2D + 3D · Roblox</span></div>
-        <div class="info-r"><span class="lbl">Ubicación</span><span class="val" id="info-ubicacion">San Salvador, El Salvador</span></div>
-        <div class="info-r"><span class="lbl">GitHub</span><span class="val" id="info-github">GabrielaMena018</span></div>
-        <div class="info-r"><span class="lbl">Email</span><span class="val" id="info-email">tu@email.com</span></div>
-        <div class="info-r"><span class="lbl">Estado</span><span class="val available">● Disponible</span></div>
+    <!-- ══ SOBRE MÍ ══ -->
+    <div class="win" id="win-sobre" style="width:390px;top:75px;left:155px">
+      <div class="wbar" onmousedown="startDrag(event,'win-sobre')" ontouchstart="startDragTouch(event,'win-sobre')">
+        <div class="wbtn close" onclick="closeWin('win-sobre','ico-sobre')"></div>
+        <div class="wbtn min" onclick="closeWin('win-sobre','ico-sobre')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">readme.txt</span>
       </div>
-    </div>
-  </div>
-
-  <!-- ══ HABILIDADES ══ -->
-  <div class="win" id="win-habilidades" style="width:440px;top:90px;left:170px">
-    <div class="wbar" onmousedown="startDrag(event,'win-habilidades')" ontouchstart="startDragTouch(event,'win-habilidades')">
-      <div class="wbtn close" onclick="closeWin('win-habilidades','ico-habilidades')"></div>
-      <div class="wbtn min" onclick="closeWin('win-habilidades','ico-habilidades')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">habilidades.sys</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Habilidades</div>
-      <p style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">Game Development</p>
-      <div class="skill-chips"><div class="chip">🎮 Unity 2D</div><div class="chip">🎮 Unity 3D</div><div class="chip">⚙️ C#</div><div class="chip">📷 Cinemachine</div><div class="chip">🗺️ NavMesh</div><div class="chip">🟡 Lua</div><div class="chip">🏗️ Roblox Studio</div><div class="chip">📖 Twine/Harlowe</div><div class="chip">🐍 Python pyGame</div></div>
-      <p style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">Frontend</p>
-      <div class="skill-chips"><div class="chip">⚛️ React</div><div class="chip">⚡ Vite</div><div class="chip">🎨 Tailwind CSS</div><div class="chip">🌐 HTML/CSS</div><div class="chip">🟨 JavaScript</div></div>
-      <p style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">Backend y herramientas</p>
-      <div class="skill-chips"><div class="chip">🟢 Node.js</div><div class="chip">🚂 Express</div><div class="chip">🍃 MongoDB</div><div class="chip">🔐 JWT Auth</div><div class="chip">☁️ Cloudinary</div><div class="chip">🐙 Git</div></div>
-    </div>
-  </div>
-
-  <!-- ══ JUEGOS ══ -->
-  <div class="win" id="win-juegos" style="width:620px;top:60px;left:130px">
-    <div class="wbar" onmousedown="startDrag(event,'win-juegos')" ontouchstart="startDragTouch(event,'win-juegos')">
-      <div class="wbtn close" onclick="closeWin('win-juegos','ico-juegos')"></div>
-      <div class="wbtn min" onclick="closeWin('win-juegos','ico-juegos')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">mis_juegos/</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Videojuegos</div>
-      <div class="filter-bar">
-        <button class="fbtn active" onclick="filterG('all',this)">Todos</button>
-        <button class="fbtn" onclick="filterG('2d',this)">2D</button>
-        <button class="fbtn" onclick="filterG('3d',this)">3D</button>
-        <button class="fbtn" onclick="filterG('roblox',this)">Roblox</button>
-      </div>
-      <div class="games-grid" id="gGrid">
-        <div class="gcard" data-type="2d" data-gid="plataforma"><div class="gthumb" style="background:linear-gradient(135deg,#c8e8f0,#f0e8c8)" onclick="isLoggedIn&&triggerGameImg('plataforma')"><div class="noimg" id="gnoimg-plataforma"><span>🏃</span><span class="hint" id="ghint-plataforma"></span></div><img id="gimg-plataforma" src="" style="display:none"><div class="gi-overlay" id="govl-plataforma" style="display:none">📁</div></div><div class="gbody"><span class="gtag t2d">2D</span><div class="gname" id="gname-plataforma">Plataforma 2D</div><p class="gdesc" id="gdesc-plataforma">Desplazamiento lateral, saltos, coleccionables y enemigos en Unity 2D.</p><div class="gtags-row" id="gtags-plataforma"><span class="gtag-mini">Tilemap</span><span class="gtag-mini">Physics 2D</span><span class="gtag-mini">Animator</span></div></div></div>
-        <div class="gcard" data-type="3d" data-gid="aventura"><div class="gthumb" style="background:linear-gradient(135deg,#c8d0f0,#d0f0d8)" onclick="isLoggedIn&&triggerGameImg('aventura')"><div class="noimg" id="gnoimg-aventura"><span>🗺️</span><span class="hint" id="ghint-aventura"></span></div><img id="gimg-aventura" src="" style="display:none"><div class="gi-overlay" id="govl-aventura" style="display:none">📁</div></div><div class="gbody"><span class="gtag t3d">3D</span><div class="gname" id="gname-aventura">Aventura 3D</div><p class="gdesc" id="gdesc-aventura">Exploración en tercera persona, misiones y cámara Cinemachine.</p><div class="gtags-row" id="gtags-aventura"><span class="gtag-mini">Third Person</span><span class="gtag-mini">Cinemachine</span><span class="gtag-mini">NavMesh</span></div></div></div>
-        <div class="gcard" data-type="3d" data-gid="carreras"><div class="gthumb" style="background:linear-gradient(135deg,#f0e0b0,#b0e0f0)" onclick="isLoggedIn&&triggerGameImg('carreras')"><div class="noimg" id="gnoimg-carreras"><span>🏎️</span><span class="hint" id="ghint-carreras"></span></div><img id="gimg-carreras" src="" style="display:none"><div class="gi-overlay" id="govl-carreras" style="display:none">📁</div></div><div class="gbody"><span class="gtag t3d">3D</span><div class="gname" id="gname-carreras">Carreras 3D</div><p class="gdesc" id="gdesc-carreras">Física de vehículos, pistas cronometradas y sistema de posiciones.</p><div class="gtags-row" id="gtags-carreras"><span class="gtag-mini">Rigidbody</span><span class="gtag-mini">Physics</span><span class="gtag-mini">Timer</span></div></div></div>
-        <div class="gcard" data-type="3d" data-gid="shooter"><div class="gthumb" style="background:linear-gradient(135deg,#e0c0d8,#c0d8e0)" onclick="isLoggedIn&&triggerGameImg('shooter')"><div class="noimg" id="gnoimg-shooter"><span>🔫</span><span class="hint" id="ghint-shooter"></span></div><img id="gimg-shooter" src="" style="display:none"><div class="gi-overlay" id="govl-shooter" style="display:none">📁</div></div><div class="gbody"><span class="gtag t3d">3D</span><div class="gname" id="gname-shooter">Shooter</div><p class="gdesc" id="gdesc-shooter">Proyectiles, oleadas de enemigos y partículas de impacto.</p><div class="gtags-row" id="gtags-shooter"><span class="gtag-mini">Raycast</span><span class="gtag-mini">Particles</span><span class="gtag-mini">Enemy AI</span></div></div></div>
-        <div class="gcard" data-type="2d" data-gid="clicker"><div class="gthumb" style="background:linear-gradient(135deg,#f4e8a0,#f0c8d8)" onclick="isLoggedIn&&triggerGameImg('clicker')"><div class="noimg" id="gnoimg-clicker"><span>👆</span><span class="hint" id="ghint-clicker"></span></div><img id="gimg-clicker" src="" style="display:none"><div class="gi-overlay" id="govl-clicker" style="display:none">📁</div></div><div class="gbody"><span class="gtag t2d">2D</span><div class="gname" id="gname-clicker">Clicker</div><p class="gdesc" id="gdesc-clicker">Recursos acumulables, mejoras desbloqueables y guardado con PlayerPrefs.</p><div class="gtags-row" id="gtags-clicker"><span class="gtag-mini">Idle</span><span class="gtag-mini">UI Canvas</span><span class="gtag-mini">PlayerPrefs</span></div></div></div>
-        <div class="gcard" data-type="2d" data-gid="defensa"><div class="gthumb" style="background:linear-gradient(135deg,#b8e8d0,#e8d0b8)" onclick="isLoggedIn&&triggerGameImg('defensa')"><div class="noimg" id="gnoimg-defensa"><span>🏰</span><span class="hint" id="ghint-defensa"></span></div><img id="gimg-defensa" src="" style="display:none"><div class="gi-overlay" id="govl-defensa" style="display:none">📁</div></div><div class="gbody"><span class="gtag t2d">2D</span><div class="gname" id="gname-defensa">Tower Defense</div><p class="gdesc" id="gdesc-defensa">UI de niveles, tienda de torres, oleadas y sistema de monedas.</p><div class="gtags-row" id="gtags-defensa"><span class="gtag-mini">UI Niveles</span><span class="gtag-mini">Tienda</span><span class="gtag-mini">Waves</span></div></div></div>
-        <div class="gcard" data-type="3d" data-gid="colorswitch"><div class="gthumb" style="background:linear-gradient(135deg,#c8c0e8,#c0e8c8)" onclick="isLoggedIn&&triggerGameImg('colorswitch')"><div class="noimg" id="gnoimg-colorswitch"><span>🎮</span><span class="hint" id="ghint-colorswitch"></span></div><img id="gimg-colorswitch" src="" style="display:none"><div class="gi-overlay" id="govl-colorswitch" style="display:none">📁</div></div><div class="gbody"><span class="gtag t3d">3D</span><div class="gname" id="gname-colorswitch">Color Switch 3D</div><p class="gdesc" id="gdesc-colorswitch">Mallas procedurales, colisiones por color y cámara FreeLook.</p><div class="gtags-row" id="gtags-colorswitch"><span class="gtag-mini">Procedural Mesh</span><span class="gtag-mini">Cinemachine</span></div></div></div>
-        <div class="gcard" data-type="roblox" data-gid="roblox"><div class="gthumb" style="background:linear-gradient(135deg,#f4e8a0,#f0c8a0)" onclick="isLoggedIn&&triggerGameImg('roblox')"><div class="noimg" id="gnoimg-roblox"><span>🟡</span><span class="hint" id="ghint-roblox"></span></div><img id="gimg-roblox" src="" style="display:none"><div class="gi-overlay" id="govl-roblox" style="display:none">📁</div></div><div class="gbody"><span class="gtag troblox">Roblox</span><div class="gname" id="gname-roblox">Mundo Roblox</div><p class="gdesc" id="gdesc-roblox">Tienda de ítems, estadísticas de jugador y paisaje en Lua.</p><div class="gtags-row" id="gtags-roblox"><span class="gtag-mini">Lua</span><span class="gtag-mini">Tienda</span><span class="gtag-mini">Stats</span></div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ WEB ══ -->
-  <div class="win" id="win-web" style="width:430px;top:80px;left:160px">
-    <div class="wbar" onmousedown="startDrag(event,'win-web')" ontouchstart="startDragTouch(event,'win-web')">
-      <div class="wbtn close" onclick="closeWin('win-web','ico-web')"></div>
-      <div class="wbtn min" onclick="closeWin('win-web','ico-web')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">proyectos_web/</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Proyectos Web</div>
-      <div class="proj-list" id="web-proj-list">
-        <div class="pcard"><span class="pico">🏥</span><div><div class="pname">HospitalRosales API</div><div class="pdesc">API REST hospitalaria con JWT, verificación de email y Cloudinary.</div><div class="ptags"><span class="ptag" style="background:var(--mint)">Node.js</span><span class="ptag" style="background:var(--mint)">MongoDB</span><span class="ptag">JWT Auth</span><span class="ptag">Cloudinary</span></div></div></div>
-        <div class="pcard"><span class="pico">🩺</span><div><div class="pname">Clínica Monte Tabor</div><div class="pdesc">Inventario médico full-stack con auditoría de acciones y roles.</div><div class="ptags"><span class="ptag" style="background:var(--peach)">Full Stack</span><span class="ptag" style="background:var(--peach)">Audit Log</span><span class="ptag">Express</span><span class="ptag">REST API</span></div></div></div>
-        <div class="pcard"><span class="pico">⚛️</span><div><div class="pname">App JSONPlaceholder</div><div class="pdesc">React + Vite con filtros, paginación y arquitectura modular.</div><div class="ptags"><span class="ptag" style="background:var(--lav)">React</span><span class="ptag" style="background:var(--lav)">Vite</span><span class="ptag">Tailwind</span><span class="ptag">REST API</span></div></div></div>
-        <div class="pcard"><span class="pico">👻</span><div><div class="pname">Umbral: Ecos de San Lorenzo</div><div class="pdesc">Horror narrativo en Twine/Harlowe con audio sintetizado en Python.</div><div class="ptags"><span class="ptag" style="background:var(--pink)">Twine</span><span class="ptag" style="background:var(--pink)">Horror</span><span class="ptag">Python Audio</span></div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ CONTACTO ══ -->
-  <div class="win" id="win-contacto" style="width:370px;top:100px;left:180px">
-    <div class="wbar" onmousedown="startDrag(event,'win-contacto')" ontouchstart="startDragTouch(event,'win-contacto')">
-      <div class="wbtn close" onclick="closeWin('win-contacto','ico-contacto')"></div>
-      <div class="wbtn min" onclick="closeWin('win-contacto','ico-contacto')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">contacto.txt</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Contacto</div>
-      <p class="contact-msg" id="contacto-msg">¿Tienes un proyecto en mente? Estoy disponible. Escríbeme y hablemos.</p>
-      <div class="contact-chips">
-        <a id="contact-github" href="https://github.com/GabrielaMena018" target="_blank" class="cchip">🐙 <span id="contact-github-txt">GabrielaMena018</span></a>
-        <a id="contact-email" href="mailto:tu@email.com" class="cchip">📧 <span id="contact-email-txt">Email</span></a>
-        <a href="https://www.linkedin.com/in/gabriela-mena-b93389393?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="cchip">💼 LinkedIn</a>
-        <span class="cchip">📍 <span id="contact-ubicacion-txt">San Salvador</span></span>
-      </div>
-      <div style="margin-top:1rem;padding:.8rem;background:white;border:1.5px solid var(--wborder);border-radius:7px">
-        <div style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em">Estado del sistema</div>
+      <div class="wbody">
+        <div class="win-section-title">Sobre mí</div>
+        <p class="about-txt" id="sobre-bio">Soy Gabriela Isabel Castillo Mena, Técnico en Desarrollo de Software. Me
+          especializo en videojuegos 2D y 3D, aplicaciones web y narrativa interactiva. Construyo experiencias digitales
+          desde El Salvador.</p>
         <div class="info-rows">
-          <div class="info-r"><span class="lbl">Disponibilidad</span><span class="val available">● Disponible</span></div>
-          <div class="info-r"><span class="lbl">Respuesta</span><span class="val">~24 horas</span></div>
-          <div class="info-r"><span class="lbl">Modalidad</span><span class="val">Remoto / Presencial</span></div>
+          <div class="info-r"><span class="lbl">Nombre</span><span class="val" id="info-nombre">Gabriela I. Castillo
+              Mena</span></div>
+          <div class="info-r"><span class="lbl">Título</span><span class="val" id="info-titulo">Técnico en Desarrollo de
+              SW</span></div>
+          <div class="info-r"><span class="lbl">Game Dev</span><span class="val">Unity 2D + 3D · Roblox</span></div>
+          <div class="info-r"><span class="lbl">Ubicación</span><span class="val" id="info-ubicacion">San Salvador, El
+              Salvador</span></div>
+          <div class="info-r"><span class="lbl">GitHub</span><span class="val" id="info-github">GabrielaMena018</span>
+          </div>
+          <div class="info-r"><span class="lbl">Email</span><span class="val" id="info-email">tu@email.com</span></div>
+          <div class="info-r"><span class="lbl">Estado</span><span class="val available">● Disponible</span></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ══ PERSONALIZAR ══ -->
-  <div class="win" id="win-config" style="width:500px;top:70px;left:140px">
-    <div class="wbar" onmousedown="startDrag(event,'win-config')" ontouchstart="startDragTouch(event,'win-config')">
-      <div class="wbtn close" onclick="closeWin('win-config','ico-config')"></div>
-      <div class="wbtn min" onclick="closeWin('win-config','ico-config')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">🎨 Personalizar</span>
-    </div>
-    <div class="wbody">
-      <div class="win-section-title">Personalizar</div>
-      <div class="cfg-tabs">
-        <button class="cfg-tab active" onclick="switchTab('fondo',this)">🖼️ Fondo</button>
-        <button class="cfg-tab" onclick="switchTab('iconos',this)">🎭 Iconos</button>
-        <button class="cfg-tab" onclick="switchTab('juegos-img',this)">🎮 Capturas</button>
+    <!-- ══ HABILIDADES ══ -->
+    <div class="win" id="win-habilidades" style="width:440px;top:90px;left:170px">
+      <div class="wbar" onmousedown="startDrag(event,'win-habilidades')"
+        ontouchstart="startDragTouch(event,'win-habilidades')">
+        <div class="wbtn close" onclick="closeWin('win-habilidades','ico-habilidades')"></div>
+        <div class="wbtn min" onclick="closeWin('win-habilidades','ico-habilidades')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">habilidades.sys</span>
       </div>
-      <div class="cfg-panel active" id="panel-fondo">
-        <div class="cfg-section">
-          <div class="cfg-label">Fondos prediseñados</div>
-          <div class="cfg-grid-bg">
-            <div class="bg-preset selected" onclick="setBgPreset('default',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#c8dfe8 0%,#d4e8c2 80%,#c0d09a 100%);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('sunset',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#f4a060,#f4c080 40%,#e8d0a0);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('night',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#1a1a3a,#2a2a5a 50%,#1a2a1a);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('rose',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#f0c8d8,#f8e0e8 50%,#f0d8c8);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('forest',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#608060,#80a860 50%,#405030);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('ocean',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#4080c0,#60a0e0 40%,#a0c8f0);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('lavender',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#c0a8e0,#d8c8f0 50%,#e8d8f8);border-radius:4px"></span></div>
-            <div class="bg-preset" onclick="setBgPreset('dark',this)"><span style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#1a1a1a,#2a2a2a);border-radius:4px"></span></div>
+      <div class="wbody">
+        <div class="win-section-title">Habilidades</div>
+        <p
+          style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">
+          Game Development</p>
+        <div class="skill-chips">
+          <div class="chip">🎮 Unity 2D</div>
+          <div class="chip">🎮 Unity 3D</div>
+          <div class="chip">⚙️ C#</div>
+          <div class="chip">📷 Cinemachine</div>
+          <div class="chip">🗺️ NavMesh</div>
+          <div class="chip">🟡 Lua</div>
+          <div class="chip">🏗️ Roblox Studio</div>
+          <div class="chip">📖 Twine/Harlowe</div>
+          <div class="chip">🐍 Python Audio</div>
+        </div>
+        <p
+          style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">
+          Frontend</p>
+        <div class="skill-chips">
+          <div class="chip">⚛️ React</div>
+          <div class="chip">⚡ Vite</div>
+          <div class="chip">🎨 Tailwind CSS</div>
+          <div class="chip">🌐 HTML/CSS</div>
+          <div class="chip">🟨 JavaScript</div>
+        </div>
+        <p
+          style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em">
+          Backend y herramientas</p>
+        <div class="skill-chips">
+          <div class="chip">🟢 Node.js</div>
+          <div class="chip">🚂 Express</div>
+          <div class="chip">🍃 MongoDB</div>
+          <div class="chip">🔐 JWT Auth</div>
+          <div class="chip">☁️ Cloudinary</div>
+          <div class="chip">🐙 Git</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ JUEGOS ══ -->
+    <div class="win" id="win-juegos" style="width:620px;top:60px;left:130px">
+      <div class="wbar" onmousedown="startDrag(event,'win-juegos')" ontouchstart="startDragTouch(event,'win-juegos')">
+        <div class="wbtn close" onclick="closeWin('win-juegos','ico-juegos')"></div>
+        <div class="wbtn min" onclick="closeWin('win-juegos','ico-juegos')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">mis_juegos/</span>
+      </div>
+      <div class="wbody">
+        <div class="win-section-title">Videojuegos</div>
+        <div class="filter-bar">
+          <button class="fbtn active" onclick="filterG('all',this)">Todos</button>
+          <button class="fbtn" onclick="filterG('2d',this)">2D</button>
+          <button class="fbtn" onclick="filterG('3d',this)">3D</button>
+          <button class="fbtn" onclick="filterG('roblox',this)">Roblox</button>
+        </div>
+        <div class="games-grid" id="gGrid">
+
+          <!-- ═══ JUEGO 1: Plataforma 2D ═══
+             👉 Pon aquí la ruta de tu imagen: src="img/plataforma.png"
+             o pega un enlace: src="https://..." -->
+          <div class="gcard" data-type="2d" data-gid="plataforma">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('plataforma')">
+              <img id="gimg-plataforma" src="img/Plataforma2D.png" alt="Plataforma 2D"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <!-- Si no tienes imagen aún, borra el <img> de arriba y descomenta esto:
+            <div class="noimg" id="gnoimg-plataforma"><span>🏃</span></div> -->
+              <div class="gi-overlay" id="govl-plataforma" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t2d">2D</span>
+              <div class="gname" id="gname-plataforma">Plataforma 2D</div>
+              <p class="gdesc" id="gdesc-plataforma">Juego de plataformas con desplazamiento lateral, saltos,
+                coleccionables y enemigos desarrollado en Unity 2D.</p>
+              <div class="gtags-row" id="gtags-plataforma"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Tilemap</span><span class="gtag-mini">Physics 2D</span><span
+                  class="gtag-mini">Animator</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 2: Aventura 3D ═══
+             👉 src="img/aventura.png" -->
+          <div class="gcard" data-type="3d" data-gid="aventura">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('aventura')">
+              <img id="gimg-aventura" src="img/Aventura.png" alt="Aventura 3D"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-aventura" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t3d">3D</span>
+              <div class="gname" id="gname-aventura">Aventura 3D</div>
+              <p class="gdesc" id="gdesc-aventura">Exploración en tercera persona con frondosos bosques, senderos
+                naturales y paisajes llenos de vida.</p>
+              <div class="gtags-row" id="gtags-aventura"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Terrain System</span><span class="gtag-mini">C#</span><span
+                  class="gtag-mini">Cinemachine</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 3: Carreras 3D ═══
+             👉 src="img/carreras.png" -->
+          <div class="gcard" data-type="3d" data-gid="carreras">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('carreras')">
+              <img id="gimg-carreras" src="img/Racing3D.png" alt="Carreras 3D"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-carreras" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t3d">3D</span>
+              <div class="gname" id="gname-carreras">Carreras 3D</div>
+              <p class="gdesc" id="gdesc-carreras">Juego de velocidad contra el tiempo con física de vehículos, pistas
+                cronometradas y sistema de posiciones.</p>
+              <div class="gtags-row" id="gtags-carreras"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Rigidbody</span><span class="gtag-mini">Diseño</span><span
+                  class="gtag-mini">Timer</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 4: Shooter ═══
+             👉 src="img/shooter.png" -->
+          <div class="gcard" data-type="3d" data-gid="shooter">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('shooter')">
+              <img id="gimg-shooter" src="img/Shooter2D.png" alt="Shooter"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-shooter" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t3d">3D</span>
+              <div class="gname" id="gname-shooter">Shooter</div>
+              <p class="gdesc" id="gdesc-shooter">Proyectiles, oleadas de enemigos y partículas de impacto con sistema
+                de puntaje y power-ups.</p>
+              <div class="gtags-row" id="gtags-shooter"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Raycast</span><span class="gtag-mini">Particles</span><span class="gtag-mini">Enemy
+                  AI</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 5: Clicker ═══
+             👉 src="img/clicker.png" -->
+          <div class="gcard" data-type="2d" data-gid="clicker">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('clicker')">
+              <img id="gimg-clicker" src="img/Clicker.png" alt="Clicker"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-clicker" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t2d">2D</span>
+              <div class="gname" id="gname-clicker">Clicker</div>
+              <p class="gdesc" id="gdesc-clicker">Recursos acumulables, mejoras desbloqueables y guardado de progreso
+                con PlayerPrefs.</p>
+              <div class="gtags-row" id="gtags-clicker"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Idle</span><span class="gtag-mini">UI Canvas</span><span
+                  class="gtag-mini">PlayerPrefs</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 6: Tower Defense ═══
+             👉 src="img/defensa.png" -->
+          <div class="gcard" data-type="2d" data-gid="defensa">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('defensa')">
+              <img id="gimg-defensa" src="img/Defender.png" alt="Tower Defense"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-defensa" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t2d">2D</span>
+              <div class="gname" id="gname-defensa">Tower Defense</div>
+              <p class="gdesc" id="gdesc-defensa">Defensa por oleadas con UI de niveles, tienda de torres, sistema de
+                monedas y dificultad progresiva.</p>
+              <div class="gtags-row" id="gtags-defensa"><span class="gtag-mini">Unity</span><span class="gtag-mini">UI
+                  Niveles</span><span class="gtag-mini">Tienda</span><span class="gtag-mini">Waves</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 7: Juego de mundo abierto ═══
+             👉 src="img/mundoabierto.png" -->
+          <div class="gcard" data-type="3d" data-gid="colorswitch">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('colorswitch')">
+              <img id="gimg-colorswitch" src="img/MundoAbierto.png" alt="Mundo Abierto"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-colorswitch" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag t3d">3D</span>
+              <div class="gname" id="gname-colorswitch">Juego de mundo abierto</div>
+              <p class="gdesc" id="gdesc-colorswitch">Explora un extenso mundo abierto rodeado de frondosos bosques,
+                senderos naturales y paisajes llenos de vida.</p>
+              <div class="gtags-row" id="gtags-colorswitch"><span class="gtag-mini">Unity</span><span
+                  class="gtag-mini">Terrain System</span><span class="gtag-mini">C#</span></div>
+            </div>
+          </div>
+
+          <!-- ═══ JUEGO 8: Roblox ═══
+             👉 src="img/roblox.png" -->
+          <div class="gcard" data-type="roblox" data-gid="roblox">
+            <div class="gthumb" onclick="isLoggedIn&&triggerGameImg('roblox')">
+              <img id="gimg-roblox" src="img/RacingRblox.png" alt="Roblox"
+                style="display:block;width:100%;height:100%;object-fit:cover">
+              <div class="gi-overlay" id="govl-roblox" style="display:none">📁</div>
+            </div>
+            <div class="gbody">
+              <span class="gtag troblox">Roblox</span>
+              <div class="gname" id="gname-roblox">Carreras 3D</div>
+              <p class="gdesc" id="gdesc-roblox">Juego de velocidad contra el tiempo con mecánicas de carreras, tienda
+                de ítems y estadísticas de jugador.</p>
+              <div class="gtags-row" id="gtags-roblox"><span class="gtag-mini">Roblox</span><span
+                  class="gtag-mini">Lua</span><span class="gtag-mini">Diseño</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ WEB ══ -->
+    <div class="win" id="win-web" style="width:430px;top:80px;left:160px">
+      <div class="wbar" onmousedown="startDrag(event,'win-web')" ontouchstart="startDragTouch(event,'win-web')">
+        <div class="wbtn close" onclick="closeWin('win-web','ico-web')"></div>
+        <div class="wbtn min" onclick="closeWin('win-web','ico-web')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">proyectos_web/</span>
+      </div>
+      <div class="wbody">
+        <div class="win-section-title">Proyectos Web</div>
+        <div class="proj-list" id="web-proj-list">
+          <div class="pcard"><span class="pico">🏥</span>
+            <div>
+              <div class="pname">HospitalRosales API</div>
+              <div class="pdesc">API REST hospitalaria con JWT, verificación de email y Cloudinary.</div>
+              <div class="ptags"><span class="ptag" style="background:var(--mint)">Node.js</span><span class="ptag"
+                  style="background:var(--mint)">MongoDB</span><span class="ptag">JWT Auth</span><span
+                  class="ptag">Cloudinary</span></div>
+            </div>
+          </div>
+          <div class="pcard"><span class="pico">🩺</span>
+            <div>
+              <div class="pname">Clínica Monte Tabor</div>
+              <div class="pdesc">Inventario médico full-stack con auditoría de acciones y roles.</div>
+              <div class="ptags"><span class="ptag" style="background:var(--peach)">Full Stack</span><span class="ptag"
+                  style="background:var(--peach)">Audit Log</span><span class="ptag">Express</span><span
+                  class="ptag">REST API</span></div>
+            </div>
+          </div>
+          <div class="pcard"><span class="pico">⚛️</span>
+            <div>
+              <div class="pname">App JSONPlaceholder</div>
+              <div class="pdesc">React + Vite con filtros, paginación y arquitectura modular.</div>
+              <div class="ptags"><span class="ptag" style="background:var(--lav)">React</span><span class="ptag"
+                  style="background:var(--lav)">Vite</span><span class="ptag">Tailwind</span><span class="ptag">REST
+                  API</span></div>
+            </div>
+          </div>
+          <div class="pcard"><span class="pico">👻</span>
+            <div>
+              <div class="pname">Umbral: Ecos de San Lorenzo</div>
+              <div class="pdesc">Horror narrativo en Twine/Harlowe con audio sintetizado en Python.</div>
+              <div class="ptags"><span class="ptag" style="background:var(--pink)">Twine</span><span class="ptag"
+                  style="background:var(--pink)">Horror</span><span class="ptag">Python Audio</span></div>
+            </div>
           </div>
         </div>
-        <div class="cfg-section">
-          <div class="cfg-label">Subir imagen personalizada</div>
-          <div class="bg-upload-area" onclick="document.getElementById('bg-file-input').click()">
-            <span class="big-icon">📁</span>
-            <strong style="font-family:var(--mono);font-size:11px;color:var(--ink)">Seleccionar imagen</strong>
-            <div style="margin-top:3px;font-size:9px">PNG, JPG, WEBP</div>
-          </div>
-          <input type="file" id="bg-file-input" accept="image/*" style="display:none" onchange="loadBgFile(this)">
-        </div>
-        <div class="cfg-section">
-          <div class="cfg-label">Oscurecer fondo</div>
-          <div class="opacity-row">
-            <label>Oscuridad</label>
-            <input type="range" min="0" max="70" value="0" id="overlay-range" oninput="setOverlay(this.value)">
-            <span id="overlay-val">0%</span>
-          </div>
-        </div>
-        <button class="rbtn" onclick="resetBg()" style="width:100%;text-align:center">↺ Restaurar por defecto</button>
-      </div>
-      <div class="cfg-panel" id="panel-iconos">
-        <p style="font-family:var(--mono);font-size:9px;color:var(--ink2);margin-bottom:.9rem">Toca un ícono para subir imagen personalizada.</p>
-        <div class="ico-grid">
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-bienvenida" onclick="triggerIconImg('bienvenida')" style="background:var(--blue)"><span>💻</span></div><div class="ico-name">Inicio</div><button class="ico-btn" onclick="resetIcon('bienvenida','💻','var(--blue)')">↺</button></div>
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-sobre" onclick="triggerIconImg('sobre')" style="background:var(--mint)"><span>👤</span></div><div class="ico-name">Sobre mí</div><button class="ico-btn" onclick="resetIcon('sobre','👤','var(--mint)')">↺</button></div>
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-habilidades" onclick="triggerIconImg('habilidades')" style="background:var(--lav)"><span>⚙️</span></div><div class="ico-name">Skills</div><button class="ico-btn" onclick="resetIcon('habilidades','⚙️','var(--lav)')">↺</button></div>
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-juegos" onclick="triggerIconImg('juegos')" style="background:var(--pink)"><span>🎮</span></div><div class="ico-name">Juegos</div><button class="ico-btn" onclick="resetIcon('juegos','🎮','var(--pink)')">↺</button></div>
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-web" onclick="triggerIconImg('web')" style="background:var(--peach)"><span>🌐</span></div><div class="ico-name">Web</div><button class="ico-btn" onclick="resetIcon('web','🌐','var(--peach)')">↺</button></div>
-          <div class="ico-slot"><div class="ico-preview" id="cfg-ibox-contacto" onclick="triggerIconImg('contacto')" style="background:var(--yellow)"><span>📬</span></div><div class="ico-name">Contacto</div><button class="ico-btn" onclick="resetIcon('contacto','📬','var(--yellow)')">↺</button></div>
-        </div>
-        <input type="file" id="ico-file-input" accept="image/*" style="display:none" onchange="loadIconFile(this)">
-      </div>
-      <div class="cfg-panel" id="panel-juegos-img">
-        <p style="font-family:var(--mono);font-size:9px;color:var(--ink2);margin-bottom:.9rem">Toca una tarjeta para subir captura de pantalla.</p>
-        <div class="game-img-grid">
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('plataforma')"><img id="cfg-gimg-plataforma" src="" style="display:none"><span id="cfg-gnoimg-plataforma">🏃</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Plataforma 2D</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('aventura')"><img id="cfg-gimg-aventura" src="" style="display:none"><span id="cfg-gnoimg-aventura">🗺️</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Aventura 3D</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('carreras')"><img id="cfg-gimg-carreras" src="" style="display:none"><span id="cfg-gnoimg-carreras">🏎️</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Carreras 3D</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('shooter')"><img id="cfg-gimg-shooter" src="" style="display:none"><span id="cfg-gnoimg-shooter">🔫</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Shooter</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('clicker')"><img id="cfg-gimg-clicker" src="" style="display:none"><span id="cfg-gnoimg-clicker">👆</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Clicker</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('defensa')"><img id="cfg-gimg-defensa" src="" style="display:none"><span id="cfg-gnoimg-defensa">🏰</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Tower Defense</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('colorswitch')"><img id="cfg-gimg-colorswitch" src="" style="display:none"><span id="cfg-gnoimg-colorswitch">🎮</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Color Switch 3D</div></div>
-          <div class="game-img-slot"><div class="game-img-thumb" onclick="triggerGameImg('roblox')"><img id="cfg-gimg-roblox" src="" style="display:none"><span id="cfg-gnoimg-roblox">🟡</span><div class="gi-overlay">📁</div></div><div class="game-img-label">Roblox</div></div>
-        </div>
-        <input type="file" id="game-file-input" accept="image/*" style="display:none" onchange="loadGameFile(this)">
       </div>
     </div>
-  </div>
 
-  <!-- ══ LOGIN ══ -->
-  <div class="win" id="win-login" style="width:290px;top:120px;left:50%;transform:translateX(-50%)">
-    <div class="wbar" onmousedown="startDrag(event,'win-login')" ontouchstart="startDragTouch(event,'win-login')">
-      <div class="wbtn close" onclick="closeWin('win-login','ico-admin')"></div>
-      <div class="wbtn min" onclick="closeWin('win-login','ico-admin')"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">acceso_admin.exe</span>
-    </div>
-    <div class="wbody">
-      <div class="login-box">
-        <div class="login-avatar">🔐</div>
-        <div class="login-title">Panel de Admin</div>
-        <div class="login-sub">Acceso restringido</div>
-        <div style="width:100%">
-          <div class="login-field"><label>Usuario</label><input type="text" id="login-user" placeholder="usuario" autocomplete="off"></div>
-          <div class="login-field"><label>Contraseña</label><input type="password" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
-          <div class="login-err" id="login-err">⚠️ Usuario o contraseña incorrectos</div>
-          <button class="login-btn" onclick="doLogin()">Iniciar sesión →</button>
+    <!-- ══ CONTACTO ══ -->
+    <div class="win" id="win-contacto" style="width:370px;top:100px;left:180px">
+      <div class="wbar" onmousedown="startDrag(event,'win-contacto')"
+        ontouchstart="startDragTouch(event,'win-contacto')">
+        <div class="wbtn close" onclick="closeWin('win-contacto','ico-contacto')"></div>
+        <div class="wbtn min" onclick="closeWin('win-contacto','ico-contacto')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">contacto.txt</span>
+      </div>
+      <div class="wbody">
+        <div class="win-section-title">Contacto</div>
+        <p class="contact-msg" id="contacto-msg">¿Tienes un proyecto en mente? Estoy disponible. Escríbeme y hablemos.
+        </p>
+        <div class="contact-chips">
+          <a id="contact-github" href="https://github.com/GabrielaMena018" target="_blank" class="cchip">🐙 <span
+              id="contact-github-txt">GabrielaMena018</span></a>
+          <a id="contact-email" href="mailto:tu@email.com" class="cchip">📧 <span
+              id="contact-email-txt">Email</span></a>
+          <a href="#" class="cchip">💼 LinkedIn</a>
+          <span class="cchip">📍 <span id="contact-ubicacion-txt">San Salvador</span></span>
+        </div>
+        <div style="margin-top:1rem;padding:.8rem;background:white;border:1.5px solid var(--wborder);border-radius:7px">
+          <div
+            style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em">
+            Estado del sistema</div>
+          <div class="info-rows">
+            <div class="info-r"><span class="lbl">Disponibilidad</span><span class="val available">● Disponible</span>
+            </div>
+            <div class="info-r"><span class="lbl">Respuesta</span><span class="val">~24 horas</span></div>
+            <div class="info-r"><span class="lbl">Modalidad</span><span class="val">Remoto / Presencial</span></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ══ ADMIN PANEL ══ -->
-  <div class="win" id="win-admin" style="width:540px;top:60px;left:130px">
-    <div class="wbar" onmousedown="startDrag(event,'win-admin')" ontouchstart="startDragTouch(event,'win-admin')">
-      <div class="wbtn close" onclick="doLogout()"></div>
-      <div class="wbtn min" onclick="doLogout()"></div>
-      <div class="wbtn max"></div>
-      <span class="wtitle">🔓 Panel de administración</span>
+    <!-- ══ PERSONALIZAR ══ -->
+    <div class="win" id="win-config" style="width:500px;top:70px;left:140px">
+      <div class="wbar" onmousedown="startDrag(event,'win-config')" ontouchstart="startDragTouch(event,'win-config')">
+        <div class="wbtn close" onclick="closeWin('win-config','ico-config')"></div>
+        <div class="wbtn min" onclick="closeWin('win-config','ico-config')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">🎨 Personalizar</span>
+      </div>
+      <div class="wbody">
+        <div class="win-section-title">Personalizar</div>
+        <div class="cfg-tabs">
+          <button class="cfg-tab active" onclick="switchTab('fondo',this)">🖼️ Fondo</button>
+          <button class="cfg-tab" onclick="switchTab('iconos',this)">🎭 Iconos</button>
+          <button class="cfg-tab" onclick="switchTab('juegos-img',this)">🎮 Capturas</button>
+        </div>
+        <div class="cfg-panel active" id="panel-fondo">
+          <div class="cfg-section">
+            <div class="cfg-label">Fondos prediseñados</div>
+            <div class="cfg-grid-bg">
+              <div class="bg-preset selected" onclick="setBgPreset('default',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#c8dfe8 0%,#d4e8c2 80%,#c0d09a 100%);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('sunset',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#f4a060,#f4c080 40%,#e8d0a0);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('night',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#1a1a3a,#2a2a5a 50%,#1a2a1a);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('rose',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#f0c8d8,#f8e0e8 50%,#f0d8c8);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('forest',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#608060,#80a860 50%,#405030);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('ocean',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#4080c0,#60a0e0 40%,#a0c8f0);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('lavender',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#c0a8e0,#d8c8f0 50%,#e8d8f8);border-radius:4px"></span>
+              </div>
+              <div class="bg-preset" onclick="setBgPreset('dark',this)"><span
+                  style="display:block;width:100%;height:100%;background:linear-gradient(180deg,#1a1a1a,#2a2a2a);border-radius:4px"></span>
+              </div>
+            </div>
+          </div>
+          <div class="cfg-section">
+            <div class="cfg-label">Subir imagen personalizada</div>
+            <div class="bg-upload-area" onclick="document.getElementById('bg-file-input').click()">
+              <span class="big-icon">📁</span>
+              <strong style="font-family:var(--mono);font-size:11px;color:var(--ink)">Seleccionar imagen</strong>
+              <div style="margin-top:3px;font-size:9px">PNG, JPG, WEBP</div>
+            </div>
+            <input type="file" id="bg-file-input" accept="image/*" style="display:none" onchange="loadBgFile(this)">
+          </div>
+          <div class="cfg-section">
+            <div class="cfg-label">Oscurecer fondo</div>
+            <div class="opacity-row">
+              <label>Oscuridad</label>
+              <input type="range" min="0" max="70" value="0" id="overlay-range" oninput="setOverlay(this.value)">
+              <span id="overlay-val">0%</span>
+            </div>
+          </div>
+          <button class="rbtn" onclick="resetBg()" style="width:100%;text-align:center">↺ Restaurar por defecto</button>
+        </div>
+        <div class="cfg-panel" id="panel-iconos">
+          <p style="font-family:var(--mono);font-size:9px;color:var(--ink2);margin-bottom:.9rem">Toca un ícono para
+            subir imagen personalizada.</p>
+          <div class="ico-grid">
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-bienvenida" onclick="triggerIconImg('bienvenida')"
+                style="background:var(--blue)"><span>💻</span></div>
+              <div class="ico-name">Inicio</div><button class="ico-btn"
+                onclick="resetIcon('bienvenida','💻','var(--blue)')">↺</button>
+            </div>
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-sobre" onclick="triggerIconImg('sobre')"
+                style="background:var(--mint)"><span>👤</span></div>
+              <div class="ico-name">Sobre mí</div><button class="ico-btn"
+                onclick="resetIcon('sobre','👤','var(--mint)')">↺</button>
+            </div>
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-habilidades" onclick="triggerIconImg('habilidades')"
+                style="background:var(--lav)"><span>⚙️</span></div>
+              <div class="ico-name">Skills</div><button class="ico-btn"
+                onclick="resetIcon('habilidades','⚙️','var(--lav)')">↺</button>
+            </div>
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-juegos" onclick="triggerIconImg('juegos')"
+                style="background:var(--pink)"><span>🎮</span></div>
+              <div class="ico-name">Juegos</div><button class="ico-btn"
+                onclick="resetIcon('juegos','🎮','var(--pink)')">↺</button>
+            </div>
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-web" onclick="triggerIconImg('web')"
+                style="background:var(--peach)"><span>🌐</span></div>
+              <div class="ico-name">Web</div><button class="ico-btn"
+                onclick="resetIcon('web','🌐','var(--peach)')">↺</button>
+            </div>
+            <div class="ico-slot">
+              <div class="ico-preview" id="cfg-ibox-contacto" onclick="triggerIconImg('contacto')"
+                style="background:var(--yellow)"><span>📬</span></div>
+              <div class="ico-name">Contacto</div><button class="ico-btn"
+                onclick="resetIcon('contacto','📬','var(--yellow)')">↺</button>
+            </div>
+          </div>
+          <input type="file" id="ico-file-input" accept="image/*" style="display:none" onchange="loadIconFile(this)">
+        </div>
+        <div class="cfg-panel" id="panel-juegos-img">
+          <p style="font-family:var(--mono);font-size:9px;color:var(--ink2);margin-bottom:.9rem">Toca una tarjeta para
+            subir captura de pantalla.</p>
+          <div class="game-img-grid">
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('plataforma')"><img id="cfg-gimg-plataforma" src=""
+                  style="display:none"><span id="cfg-gnoimg-plataforma">🏃</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Plataforma 2D</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('aventura')"><img id="cfg-gimg-aventura" src=""
+                  style="display:none"><span id="cfg-gnoimg-aventura">🗺️</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Aventura 3D</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('carreras')"><img id="cfg-gimg-carreras" src=""
+                  style="display:none"><span id="cfg-gnoimg-carreras">🏎️</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Carreras 3D</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('shooter')"><img id="cfg-gimg-shooter" src=""
+                  style="display:none"><span id="cfg-gnoimg-shooter">🔫</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Shooter</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('clicker')"><img id="cfg-gimg-clicker" src=""
+                  style="display:none"><span id="cfg-gnoimg-clicker">👆</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Clicker</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('defensa')"><img id="cfg-gimg-defensa" src=""
+                  style="display:none"><span id="cfg-gnoimg-defensa">🏰</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Tower Defense</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('colorswitch')"><img id="cfg-gimg-colorswitch" src=""
+                  style="display:none"><span id="cfg-gnoimg-colorswitch">🎮</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Color Switch 3D</div>
+            </div>
+            <div class="game-img-slot">
+              <div class="game-img-thumb" onclick="triggerGameImg('roblox')"><img id="cfg-gimg-roblox" src=""
+                  style="display:none"><span id="cfg-gnoimg-roblox">🟡</span>
+                <div class="gi-overlay">📁</div>
+              </div>
+              <div class="game-img-label">Roblox</div>
+            </div>
+          </div>
+          <input type="file" id="game-file-input" accept="image/*" style="display:none" onchange="loadGameFile(this)">
+        </div>
+      </div>
     </div>
-    <div class="wbody">
-      <div class="logout-row">
-        <span>✅ Sesión: <strong>menaGabriela</strong></span>
-        <button class="logout-btn" onclick="doLogout()">Cerrar sesión</button>
+
+    <!-- ══ LOGIN ══ -->
+    <div class="win" id="win-login" style="width:290px;top:120px;left:50%;transform:translateX(-50%)">
+      <div class="wbar" onmousedown="startDrag(event,'win-login')" ontouchstart="startDragTouch(event,'win-login')">
+        <div class="wbtn close" onclick="closeWin('win-login','ico-admin')"></div>
+        <div class="wbtn min" onclick="closeWin('win-login','ico-admin')"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">acceso_admin.exe</span>
       </div>
-      <div class="adm-tabs">
-        <button class="adm-tab active" onclick="switchAdmTab('perfil',this)">👤 Perfil</button>
-        <button class="adm-tab" onclick="switchAdmTab('juegos-edit',this)">🎮 Juegos</button>
-        <button class="adm-tab" onclick="switchAdmTab('colores',this)">🎨 Colores</button>
-        <button class="adm-tab" onclick="switchAdmTab('proyectos',this)">➕ Nuevo</button>
-      </div>
-      <!-- PERFIL -->
-      <div class="adm-panel active" id="adm-panel-perfil">
-        <div class="adm-section-label">Información personal</div>
-        <div class="edit-field"><label>Nombre completo</label><input type="text" id="edit-nombre" value="Gabriela Isabel Castillo Mena"></div>
-        <div class="edit-field"><label>Título / Cargo</label><input type="text" id="edit-titulo" value="Técnico en Desarrollo de Software"></div>
-        <div class="edit-field"><label>Biografía</label><textarea id="edit-bio" rows="3">Soy Gabriela Isabel Castillo Mena, Técnico en Desarrollo de Software. Me especializo en videojuegos 2D y 3D, aplicaciones web y narrativa interactiva. Construyo experiencias digitales desde El Salvador.</textarea></div>
-        <div class="pf-row">
-          <div class="pf-field"><label>Ubicación</label><input type="text" id="edit-ubicacion" value="San Salvador, El Salvador"></div>
-          <div class="pf-field"><label>GitHub</label><input type="text" id="edit-github" value="GabrielaMena018"></div>
+      <div class="wbody">
+        <div class="login-box">
+          <div class="login-avatar">🔐</div>
+          <div class="login-title">Panel de Admin</div>
+          <div class="login-sub">Acceso restringido</div>
+          <div style="width:100%">
+            <div class="login-field"><label>Usuario</label><input type="text" id="login-user" placeholder="usuario"
+                autocomplete="off"></div>
+            <div class="login-field"><label>Contraseña</label><input type="password" id="login-pass"
+                placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+            <div class="login-err" id="login-err">⚠️ Usuario o contraseña incorrectos</div>
+            <button class="login-btn" onclick="doLogin()">Iniciar sesión →</button>
+          </div>
         </div>
-        <div class="edit-field"><label>Email</label><input type="email" id="edit-email" value="tu@email.com"></div>
-        <div class="edit-field"><label>Mensaje de contacto</label><textarea id="edit-contacto-msg" rows="2">¿Tienes un proyecto en mente? Estoy disponible. Escríbeme y hablemos.</textarea></div>
-        <button class="save-btn" onclick="savePerfil()">💾 Guardar cambios</button>
-        <div class="save-ok" id="save-ok-perfil">✅ Guardado correctamente</div>
       </div>
-      <!-- JUEGOS EDIT -->
-      <div class="adm-panel" id="adm-panel-juegos-edit">
-        <div class="adm-section-label">Editar juego</div>
-        <div class="pf-field" style="margin-bottom:8px"><label>Seleccionar juego</label>
-          <select id="game-edit-sel" onchange="loadGameEdit(this.value)">
-            <option value="plataforma">Plataforma 2D</option><option value="aventura">Aventura 3D</option>
-            <option value="carreras">Carreras 3D</option><option value="shooter">Shooter</option>
-            <option value="clicker">Clicker</option><option value="defensa">Tower Defense</option>
-            <option value="colorswitch">Color Switch 3D</option><option value="roblox">Mundo Roblox</option>
-          </select>
+    </div>
+
+    <!-- ══ ADMIN PANEL ══ -->
+    <div class="win" id="win-admin" style="width:540px;top:60px;left:130px">
+      <div class="wbar" onmousedown="startDrag(event,'win-admin')" ontouchstart="startDragTouch(event,'win-admin')">
+        <div class="wbtn close" onclick="doLogout()"></div>
+        <div class="wbtn min" onclick="doLogout()"></div>
+        <div class="wbtn max"></div>
+        <span class="wtitle">🔓 Panel de administración</span>
+      </div>
+      <div class="wbody">
+        <div class="logout-row">
+          <span>✅ Sesión: <strong>menaGabriela</strong></span>
+          <button class="logout-btn" onclick="doLogout()">Cerrar sesión</button>
         </div>
-        <div class="edit-field"><label>Nombre</label><input type="text" id="gedit-name"></div>
-        <div class="edit-field"><label>Descripción</label><textarea id="gedit-desc" rows="2"></textarea></div>
-        <div class="edit-field"><label>Tags (separados por coma)</label><input type="text" id="gedit-tags"></div>
-        <button class="save-btn" onclick="saveGameEdit()">💾 Guardar juego</button>
-        <div class="save-ok" id="save-ok-juego">✅ Guardado correctamente</div>
-      </div>
-      <!-- COLORES -->
-      <div class="adm-panel" id="adm-panel-colores">
-        <div class="adm-section-label">Paleta de colores</div>
-        <div class="color-grid">
-          <div class="color-row"><label>Fondo ventana</label><input type="color" id="clr-window" value="#f0ede4" oninput="previewColor('--window',this.value)"></div>
-          <div class="color-row"><label>Borde ventana</label><input type="color" id="clr-wborder" value="#b8b0a0" oninput="previewColor('--wborder',this.value)"></div>
-          <div class="color-row"><label>Texto principal</label><input type="color" id="clr-ink" value="#3a3228" oninput="previewColor('--ink',this.value)"></div>
-          <div class="color-row"><label>Texto secundario</label><input type="color" id="clr-ink2" value="#7a6e62" oninput="previewColor('--ink2',this.value)"></div>
-          <div class="color-row"><label>Rosa / 2D</label><input type="color" id="clr-pink" value="#f4b8c8" oninput="previewColor('--pink',this.value)"></div>
-          <div class="color-row"><label>Lavanda / 3D</label><input type="color" id="clr-lav" value="#c8c0e8" oninput="previewColor('--lav',this.value)"></div>
-          <div class="color-row"><label>Menta / Web</label><input type="color" id="clr-mint" value="#b8e8d0" oninput="previewColor('--mint',this.value)"></div>
-          <div class="color-row"><label>Amarillo</label><input type="color" id="clr-yellow" value="#f4e8a0" oninput="previewColor('--yellow',this.value)"></div>
-          <div class="color-row"><label>Melocotón</label><input type="color" id="clr-peach" value="#f4d0b0" oninput="previewColor('--peach',this.value)"></div>
-          <div class="color-row"><label>Azul info</label><input type="color" id="clr-blue" value="#a0c8e8" oninput="previewColor('--blue',this.value)"></div>
+        <div class="adm-tabs">
+          <button class="adm-tab active" onclick="switchAdmTab('perfil',this)">👤 Perfil</button>
+          <button class="adm-tab" onclick="switchAdmTab('juegos-edit',this)">🎮 Juegos</button>
+          <button class="adm-tab" onclick="switchAdmTab('colores',this)">🎨 Colores</button>
+          <button class="adm-tab" onclick="switchAdmTab('proyectos',this)">➕ Nuevo</button>
         </div>
-        <button class="save-btn" onclick="saveColors()">💾 Guardar colores</button>
-        <button class="color-reset-btn" onclick="resetColors()">↺ Restaurar originales</button>
-        <div class="save-ok" id="save-ok-colores">✅ Colores guardados</div>
-      </div>
-      <!-- PROYECTOS -->
-      <div class="adm-panel" id="adm-panel-proyectos">
-        <div class="adm-section-label">Agregar proyecto nuevo</div>
-        <div class="proj-form">
+        <!-- PERFIL -->
+        <div class="adm-panel active" id="adm-panel-perfil">
+          <div class="adm-section-label">Información personal</div>
+          <div class="edit-field"><label>Nombre completo</label><input type="text" id="edit-nombre"
+              value="Gabriela Isabel Castillo Mena"></div>
+          <div class="edit-field"><label>Título / Cargo</label><input type="text" id="edit-titulo"
+              value="Técnico en Desarrollo de Software"></div>
+          <div class="edit-field"><label>Biografía</label><textarea id="edit-bio"
+              rows="3">Soy Gabriela Isabel Castillo Mena, Técnico en Desarrollo de Software. Me especializo en videojuegos 2D y 3D, aplicaciones web y narrativa interactiva. Construyo experiencias digitales desde El Salvador.</textarea>
+          </div>
           <div class="pf-row">
-            <div class="pf-field"><label>Nombre</label><input type="text" id="pf-name" placeholder="Mi Proyecto"></div>
-            <div class="pf-field"><label>Tipo</label><select id="pf-type"><option value="web">🌐 Web</option><option value="2d">🎮 2D</option><option value="3d">🎮 3D</option><option value="roblox">🟡 Roblox</option><option value="narrativo">📖 Narrativo</option></select></div>
+            <div class="pf-field"><label>Ubicación</label><input type="text" id="edit-ubicacion"
+                value="San Salvador, El Salvador"></div>
+            <div class="pf-field"><label>GitHub</label><input type="text" id="edit-github" value="GabrielaMena018">
+            </div>
           </div>
-          <div class="pf-field"><label>Descripción</label><textarea id="pf-desc" rows="2" placeholder="Descripción..."></textarea></div>
-          <div class="pf-row">
-            <div class="pf-field"><label>Tecnologías (coma)</label><input type="text" id="pf-tags" placeholder="React, Node.js"></div>
-            <div class="pf-field"><label>Emoji ícono</label><input type="text" id="pf-icon" placeholder="🚀" maxlength="4" style="font-size:16px"></div>
+          <div class="edit-field"><label>Email</label><input type="email" id="edit-email" value="tu@email.com"></div>
+          <div class="edit-field"><label>Mensaje de contacto</label><textarea id="edit-contacto-msg"
+              rows="2">¿Tienes un proyecto en mente? Estoy disponible. Escríbeme y hablemos.</textarea></div>
+          <button class="save-btn" onclick="savePerfil()">💾 Guardar cambios</button>
+          <div class="save-ok" id="save-ok-perfil">✅ Guardado correctamente</div>
+        </div>
+        <!-- JUEGOS EDIT -->
+        <div class="adm-panel" id="adm-panel-juegos-edit">
+          <div class="adm-section-label">Editar juego</div>
+          <div class="pf-field" style="margin-bottom:8px"><label>Seleccionar juego</label>
+            <select id="game-edit-sel" onchange="loadGameEdit(this.value)">
+              <option value="plataforma">Plataforma 2D</option>
+              <option value="aventura">Aventura 3D</option>
+              <option value="carreras">Carreras 3D</option>
+              <option value="shooter">Shooter</option>
+              <option value="clicker">Clicker</option>
+              <option value="defensa">Tower Defense</option>
+              <option value="colorswitch">Color Switch 3D</option>
+              <option value="roblox">Mundo Roblox</option>
+            </select>
+          </div>
+          <div class="edit-field"><label>Nombre</label><input type="text" id="gedit-name"></div>
+          <div class="edit-field"><label>Descripción</label><textarea id="gedit-desc" rows="2"></textarea></div>
+          <div class="edit-field"><label>Tags (separados por coma)</label><input type="text" id="gedit-tags"></div>
+          <button class="save-btn" onclick="saveGameEdit()">💾 Guardar juego</button>
+          <div class="save-ok" id="save-ok-juego">✅ Guardado correctamente</div>
+        </div>
+        <!-- COLORES -->
+        <div class="adm-panel" id="adm-panel-colores">
+          <div class="adm-section-label">Paleta de colores</div>
+          <div class="color-grid">
+            <div class="color-row"><label>Fondo ventana</label><input type="color" id="clr-window" value="#f0ede4"
+                oninput="previewColor('--window',this.value)"></div>
+            <div class="color-row"><label>Borde ventana</label><input type="color" id="clr-wborder" value="#b8b0a0"
+                oninput="previewColor('--wborder',this.value)"></div>
+            <div class="color-row"><label>Texto principal</label><input type="color" id="clr-ink" value="#3a3228"
+                oninput="previewColor('--ink',this.value)"></div>
+            <div class="color-row"><label>Texto secundario</label><input type="color" id="clr-ink2" value="#7a6e62"
+                oninput="previewColor('--ink2',this.value)"></div>
+            <div class="color-row"><label>Rosa / 2D</label><input type="color" id="clr-pink" value="#f4b8c8"
+                oninput="previewColor('--pink',this.value)"></div>
+            <div class="color-row"><label>Lavanda / 3D</label><input type="color" id="clr-lav" value="#c8c0e8"
+                oninput="previewColor('--lav',this.value)"></div>
+            <div class="color-row"><label>Menta / Web</label><input type="color" id="clr-mint" value="#b8e8d0"
+                oninput="previewColor('--mint',this.value)"></div>
+            <div class="color-row"><label>Amarillo</label><input type="color" id="clr-yellow" value="#f4e8a0"
+                oninput="previewColor('--yellow',this.value)"></div>
+            <div class="color-row"><label>Melocotón</label><input type="color" id="clr-peach" value="#f4d0b0"
+                oninput="previewColor('--peach',this.value)"></div>
+            <div class="color-row"><label>Azul info</label><input type="color" id="clr-blue" value="#a0c8e8"
+                oninput="previewColor('--blue',this.value)"></div>
+          </div>
+          <button class="save-btn" onclick="saveColors()">💾 Guardar colores</button>
+          <button class="color-reset-btn" onclick="resetColors()">↺ Restaurar originales</button>
+          <div class="save-ok" id="save-ok-colores">✅ Colores guardados</div>
+        </div>
+        <!-- PROYECTOS -->
+        <div class="adm-panel" id="adm-panel-proyectos">
+          <div class="adm-section-label">Agregar proyecto nuevo</div>
+          <div class="proj-form">
+            <div class="pf-row">
+              <div class="pf-field"><label>Nombre</label><input type="text" id="pf-name" placeholder="Mi Proyecto">
+              </div>
+              <div class="pf-field"><label>Tipo</label><select id="pf-type">
+                  <option value="web">🌐 Web</option>
+                  <option value="2d">🎮 2D</option>
+                  <option value="3d">🎮 3D</option>
+                  <option value="roblox">🟡 Roblox</option>
+                  <option value="narrativo">📖 Narrativo</option>
+                </select></div>
+            </div>
+            <div class="pf-field"><label>Descripción</label><textarea id="pf-desc" rows="2"
+                placeholder="Descripción..."></textarea></div>
+            <div class="pf-row">
+              <div class="pf-field"><label>Tecnologías (coma)</label><input type="text" id="pf-tags"
+                  placeholder="React, Node.js"></div>
+              <div class="pf-field"><label>Emoji ícono</label><input type="text" id="pf-icon" placeholder="🚀"
+                  maxlength="4" style="font-size:16px"></div>
+            </div>
+          </div>
+          <button class="proj-add-btn" onclick="addProject()">➕ Agregar proyecto</button>
+          <div style="margin-top:.9rem">
+            <div class="adm-section-label">Proyectos agregados</div>
+            <div class="adm-proj-list" id="adm-proj-list">
+              <div style="font-family:var(--mono);font-size:9px;color:var(--ink3);text-align:center;padding:.9rem">Sin
+                proyectos aún.</div>
+            </div>
           </div>
         </div>
-        <button class="proj-add-btn" onclick="addProject()">➕ Agregar proyecto</button>
-        <div style="margin-top:.9rem"><div class="adm-section-label">Proyectos agregados</div><div class="adm-proj-list" id="adm-proj-list"><div style="font-family:var(--mono);font-size:9px;color:var(--ink3);text-align:center;padding:.9rem">Sin proyectos aún.</div></div></div>
       </div>
     </div>
+
+  </div><!-- /desktop -->
+
+  <!-- TASKBAR -->
+  <div id="taskbar">
+    <button class="tsk-btn" id="tsk-bienvenida" onclick="switchTo('win-bienvenida','ico-bienvenida')"><span
+        class="ticon">💻</span><span class="tlabel">Inicio</span></button>
+    <button class="tsk-btn" id="tsk-sobre" onclick="switchTo('win-sobre','ico-sobre')"><span
+        class="ticon">👤</span><span class="tlabel">Sobre mí</span></button>
+    <button class="tsk-btn" id="tsk-habilidades" onclick="switchTo('win-habilidades','ico-habilidades')"><span
+        class="ticon">⚙️</span><span class="tlabel">Skills</span></button>
+    <div class="tsk-sep"></div>
+    <button class="tsk-btn" id="tsk-juegos" onclick="switchTo('win-juegos','ico-juegos')"><span
+        class="ticon">🎮</span><span class="tlabel">Juegos</span></button>
+    <button class="tsk-btn" id="tsk-web" onclick="switchTo('win-web','ico-web')"><span class="ticon">🌐</span><span
+        class="tlabel">Web</span></button>
+    <div class="tsk-sep"></div>
+    <button class="tsk-btn" id="tsk-contacto" onclick="switchTo('win-contacto','ico-contacto')"><span
+        class="ticon">📬</span><span class="tlabel">Contacto</span></button>
+    <button class="tsk-btn" id="tsk-config" onclick="openProtected('win-config','ico-config')"><span
+        class="ticon">🎨</span><span class="tlabel">Personalizar</span></button>
+    <button class="tsk-btn" id="tsk-admin" onclick="openAdminOrLogin()"><span class="ticon">🔐</span><span
+        class="tlabel">Admin</span></button>
+    <span id="clock"></span>
   </div>
 
-</div><!-- /desktop -->
+  <script>
+    // ── STORAGE ──
+    const S = { get: k => { try { return JSON.parse(localStorage.getItem('gab_' + k)) } catch (e) { return null } }, set: (k, v) => { try { localStorage.setItem('gab_' + k, JSON.stringify(v)) } catch (e) { } }, del: k => localStorage.removeItem('gab_' + k) };
 
-<!-- TASKBAR -->
-<div id="taskbar">
-  <button class="tsk-btn" id="tsk-bienvenida" onclick="switchTo('win-bienvenida','ico-bienvenida')"><span class="ticon">💻</span><span class="tlabel">Inicio</span></button>
-  <button class="tsk-btn" id="tsk-sobre" onclick="switchTo('win-sobre','ico-sobre')"><span class="ticon">👤</span><span class="tlabel">Sobre mí</span></button>
-  <button class="tsk-btn" id="tsk-habilidades" onclick="switchTo('win-habilidades','ico-habilidades')"><span class="ticon">⚙️</span><span class="tlabel">Skills</span></button>
-  <div class="tsk-sep"></div>
-  <button class="tsk-btn" id="tsk-juegos" onclick="switchTo('win-juegos','ico-juegos')"><span class="ticon">🎮</span><span class="tlabel">Juegos</span></button>
-  <button class="tsk-btn" id="tsk-web" onclick="switchTo('win-web','ico-web')"><span class="ticon">🌐</span><span class="tlabel">Web</span></button>
-  <div class="tsk-sep"></div>
-  <button class="tsk-btn" id="tsk-contacto" onclick="switchTo('win-contacto','ico-contacto')"><span class="ticon">📬</span><span class="tlabel">Contacto</span></button>
-  <button class="tsk-btn" id="tsk-config" onclick="openProtected('win-config','ico-config')"><span class="ticon">🎨</span><span class="tlabel">Personalizar</span></button>
-  <button class="tsk-btn" id="tsk-admin" onclick="openAdminOrLogin()"><span class="ticon">🔐</span><span class="tlabel">Admin</span></button>
-  <span id="clock"></span>
-</div>
+    // ── CLOCK ──
+    function tick() { document.getElementById('clock').textContent = new Date().toLocaleTimeString('es-SV', { hour: '2-digit', minute: '2-digit' }) }
+    tick(); setInterval(tick, 1000);
 
-<script>
-// ── STORAGE ──
-const S={get:k=>{try{return JSON.parse(localStorage.getItem('gab_'+k))}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem('gab_'+k,JSON.stringify(v))}catch(e){}},del:k=>localStorage.removeItem('gab_'+k)};
+    // ── MOBILE CHECK ──
+    const isMobile = () => window.innerWidth <= 600;
 
-// ── CLOCK ──
-function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('es-SV',{hour:'2-digit',minute:'2-digit'})}
-tick();setInterval(tick,1000);
+    // ── WINDOW MANAGER ──
+    let topZ = 30;
+    const allWins = ['win-bienvenida', 'win-sobre', 'win-habilidades', 'win-juegos', 'win-web', 'win-contacto', 'win-config', 'win-login', 'win-admin'];
 
-// ── MOBILE CHECK ──
-const isMobile=()=>window.innerWidth<=600;
+    function focusWin(id) { document.querySelectorAll('.win').forEach(w => w.classList.remove('focused')); const w = document.getElementById(id); if (w) { topZ++; w.style.zIndex = topZ; w.classList.add('focused') } }
 
-// ── WINDOW MANAGER ──
-let topZ=30;
-const allWins=['win-bienvenida','win-sobre','win-habilidades','win-juegos','win-web','win-contacto','win-config','win-login','win-admin'];
+    function openWin(winId, icoId) {
+      const w = document.getElementById(winId); if (!w) return;
+      w.classList.add('open'); focusWin(winId);
+      document.getElementById(icoId)?.classList.add('active');
+      document.getElementById('tsk-' + winId.replace('win-', ''))?.classList.add('open-win');
+    }
+    function closeWin(winId, icoId) {
+      document.getElementById(winId)?.classList.remove('open', 'focused');
+      document.getElementById(icoId)?.classList.remove('active');
+      document.getElementById('tsk-' + winId.replace('win-', ''))?.classList.remove('open-win');
+    }
+    // on mobile: close all others then open; on desktop: just open
+    function switchTo(winId, icoId) {
+      if (isMobile()) {
+        const target = document.getElementById(winId);
+        const isOpen = target?.classList.contains('open');
+        // close all
+        allWins.forEach(id => document.getElementById(id)?.classList.remove('open', 'focused'));
+        document.querySelectorAll('.d-icon,.tsk-btn').forEach(el => el.classList.remove('active', 'open-win'));
+        if (!isOpen) openWin(winId, icoId);
+      } else {
+        const w = document.getElementById(winId);
+        w?.classList.contains('open') ? closeWin(winId, icoId) : openWin(winId, icoId);
+      }
+    }
+    function openProtected(winId, icoId) { if (isLoggedIn) switchTo(winId, icoId); else switchTo('win-login', 'ico-admin') }
+    function openAdminOrLogin() { isLoggedIn ? switchTo('win-admin', 'ico-admin') : switchTo('win-login', 'ico-admin') }
 
-function focusWin(id){document.querySelectorAll('.win').forEach(w=>w.classList.remove('focused'));const w=document.getElementById(id);if(w){topZ++;w.style.zIndex=topZ;w.classList.add('focused')}}
+    document.querySelectorAll('.win').forEach(w => w.addEventListener('mousedown', () => !isMobile() && focusWin(w.id)));
 
-function openWin(winId,icoId){
-  const w=document.getElementById(winId);if(!w)return;
-  w.classList.add('open');focusWin(winId);
-  document.getElementById(icoId)?.classList.add('active');
-  document.getElementById('tsk-'+winId.replace('win-',''))?.classList.add('open-win');
-}
-function closeWin(winId,icoId){
-  document.getElementById(winId)?.classList.remove('open','focused');
-  document.getElementById(icoId)?.classList.remove('active');
-  document.getElementById('tsk-'+winId.replace('win-',''))?.classList.remove('open-win');
-}
-// on mobile: close all others then open; on desktop: just open
-function switchTo(winId,icoId){
-  if(isMobile()){
-    const target=document.getElementById(winId);
-    const isOpen=target?.classList.contains('open');
-    // close all
-    allWins.forEach(id=>document.getElementById(id)?.classList.remove('open','focused'));
-    document.querySelectorAll('.d-icon,.tsk-btn').forEach(el=>el.classList.remove('active','open-win'));
-    if(!isOpen)openWin(winId,icoId);
-  }else{
-    const w=document.getElementById(winId);
-    w?.classList.contains('open')?closeWin(winId,icoId):openWin(winId,icoId);
-  }
-}
-function openProtected(winId,icoId){if(isLoggedIn)switchTo(winId,icoId);else switchTo('win-login','ico-admin')}
-function openAdminOrLogin(){isLoggedIn?switchTo('win-admin','ico-admin'):switchTo('win-login','ico-admin')}
+    // ── DRAG (desktop) ──
+    let dragging = null, offX = 0, offY = 0;
+    function startDrag(e, id) {
+      if (isMobile() || e.target.classList.contains('wbtn')) return;
+      dragging = document.getElementById(id); focusWin(id); dragging.classList.add('dragging');
+      const r = dragging.getBoundingClientRect(); offX = e.clientX - r.left; offY = e.clientY - r.top; e.preventDefault();
+    }
+    function startDragTouch(e, id) {
+      if (isMobile() || e.target.classList.contains('wbtn')) return;
+      const t = e.touches[0]; dragging = document.getElementById(id); focusWin(id); dragging.classList.add('dragging');
+      const r = dragging.getBoundingClientRect(); offX = t.clientX - r.left; offY = t.clientY - r.top;
+    }
+    document.addEventListener('mousemove', e => { if (!dragging || isMobile()) return; const dr = document.getElementById('desktop').getBoundingClientRect(); let x = Math.max(0, Math.min(e.clientX - dr.left - offX, dr.width - dragging.offsetWidth)); let y = Math.max(0, Math.min(e.clientY - dr.top - offY, dr.height - dragging.offsetHeight)); dragging.style.left = x + 'px'; dragging.style.top = y + 'px'; });
+    document.addEventListener('touchmove', e => { if (!dragging || isMobile()) return; const t = e.touches[0]; const dr = document.getElementById('desktop').getBoundingClientRect(); let x = Math.max(0, Math.min(t.clientX - dr.left - offX, dr.width - dragging.offsetWidth)); let y = Math.max(0, Math.min(t.clientY - dr.top - offY, dr.height - dragging.offsetHeight)); dragging.style.left = x + 'px'; dragging.style.top = y + 'px'; }, { passive: true });
+    document.addEventListener('mouseup', () => { if (dragging) { dragging.classList.remove('dragging'); dragging = null; } });
+    document.addEventListener('touchend', () => { if (dragging) { dragging.classList.remove('dragging'); dragging = null; } });
 
-document.querySelectorAll('.win').forEach(w=>w.addEventListener('mousedown',()=>!isMobile()&&focusWin(w.id)));
+    // ── FILTER ──
+    function filterG(type, btn) { document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('#gGrid .gcard').forEach(c => c.setAttribute('data-hidden', type !== 'all' && c.dataset.type !== type ? 'true' : 'false')); }
 
-// ── DRAG (desktop) ──
-let dragging=null,offX=0,offY=0;
-function startDrag(e,id){
-  if(isMobile()||e.target.classList.contains('wbtn'))return;
-  dragging=document.getElementById(id);focusWin(id);dragging.classList.add('dragging');
-  const r=dragging.getBoundingClientRect();offX=e.clientX-r.left;offY=e.clientY-r.top;e.preventDefault();
-}
-function startDragTouch(e,id){
-  if(isMobile()||e.target.classList.contains('wbtn'))return;
-  const t=e.touches[0];dragging=document.getElementById(id);focusWin(id);dragging.classList.add('dragging');
-  const r=dragging.getBoundingClientRect();offX=t.clientX-r.left;offY=t.clientY-r.top;
-}
-document.addEventListener('mousemove',e=>{if(!dragging||isMobile())return;const dr=document.getElementById('desktop').getBoundingClientRect();let x=Math.max(0,Math.min(e.clientX-dr.left-offX,dr.width-dragging.offsetWidth));let y=Math.max(0,Math.min(e.clientY-dr.top-offY,dr.height-dragging.offsetHeight));dragging.style.left=x+'px';dragging.style.top=y+'px';});
-document.addEventListener('touchmove',e=>{if(!dragging||isMobile())return;const t=e.touches[0];const dr=document.getElementById('desktop').getBoundingClientRect();let x=Math.max(0,Math.min(t.clientX-dr.left-offX,dr.width-dragging.offsetWidth));let y=Math.max(0,Math.min(t.clientY-dr.top-offY,dr.height-dragging.offsetHeight));dragging.style.left=x+'px';dragging.style.top=y+'px';},{passive:true});
-document.addEventListener('mouseup',()=>{if(dragging){dragging.classList.remove('dragging');dragging=null;}});
-document.addEventListener('touchend',()=>{if(dragging){dragging.classList.remove('dragging');dragging=null;}});
+    // ── TABS ──
+    function switchTab(name, btn) { document.querySelectorAll('.cfg-tab').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.cfg-panel').forEach(p => p.classList.remove('active')); document.getElementById('panel-' + name).classList.add('active'); }
+    function switchAdmTab(name, btn) { document.querySelectorAll('.adm-tab').forEach(b => b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active')); document.getElementById('adm-panel-' + name).classList.add('active'); }
 
-// ── FILTER ──
-function filterG(type,btn){document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('#gGrid .gcard').forEach(c=>c.setAttribute('data-hidden',type!=='all'&&c.dataset.type!==type?'true':'false'));}
+    // ── AUTH ──
+    const ADMIN_USER = 'menaGabriela', ADMIN_PASS = 'Gc030108$';
+    let isLoggedIn = false;
+    function doLogin() {
+      const u = document.getElementById('login-user').value.trim();
+      const p = document.getElementById('login-pass').value;
+      const err = document.getElementById('login-err');
+      if (u === ADMIN_USER && p === ADMIN_PASS) {
+        isLoggedIn = true; err.classList.remove('show');
+        closeWin('win-login', 'ico-admin');
+        document.getElementById('login-user').value = '';
+        document.getElementById('login-pass').value = '';
+        document.getElementById('ibox-admin').textContent = '🔓';
+        document.querySelector('#tsk-admin .ticon').textContent = '🔓';
+        updateEditHints(true);
+        switchTo('win-admin', 'ico-admin');
+      } else { err.classList.add('show'); document.getElementById('login-pass').value = ''; document.getElementById('login-pass').focus(); }
+    }
+    function doLogout() {
+      isLoggedIn = false; closeWin('win-admin', 'ico-admin'); closeWin('win-config', 'ico-config');
+      document.getElementById('ibox-admin').textContent = '🔐';
+      document.querySelector('#tsk-admin .ticon').textContent = '🔐';
+      document.getElementById('tsk-admin')?.classList.remove('open-win');
+      updateEditHints(false);
+    }
+    function updateEditHints(on) {
+      ['plataforma', 'aventura', 'carreras', 'shooter', 'clicker', 'defensa', 'colorswitch', 'roblox'].forEach(id => {
+        const h = document.getElementById('ghint-' + id); const o = document.getElementById('govl-' + id);
+        if (h) h.textContent = on ? 'toca para subir' : ''; if (o) o.style.display = on ? '' : 'none';
+      });
+    }
 
-// ── TABS ──
-function switchTab(name,btn){document.querySelectorAll('.cfg-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.cfg-panel').forEach(p=>p.classList.remove('active'));document.getElementById('panel-'+name).classList.add('active');}
-function switchAdmTab(name,btn){document.querySelectorAll('.adm-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.adm-panel').forEach(p=>p.classList.remove('active'));document.getElementById('adm-panel-'+name).classList.add('active');}
+    // ── PERFIL ──
+    function savePerfil() {
+      const d = { nombre: document.getElementById('edit-nombre').value, titulo: document.getElementById('edit-titulo').value, bio: document.getElementById('edit-bio').value, ubicacion: document.getElementById('edit-ubicacion').value, github: document.getElementById('edit-github').value, email: document.getElementById('edit-email').value, contactoMsg: document.getElementById('edit-contacto-msg').value };
+      S.set('perfil', d); applyPerfil(d); showOk('save-ok-perfil');
+    }
+    function applyPerfil(d) {
+      if (!d) return;
+      if (d.nombre) { document.getElementById('hero-nombre').innerHTML = d.nombre; document.getElementById('info-nombre').textContent = d.nombre; }
+      if (d.titulo) { document.getElementById('hero-titulo').textContent = '// ' + d.titulo; document.getElementById('info-titulo').textContent = d.titulo; }
+      if (d.bio) document.getElementById('sobre-bio').textContent = d.bio;
+      if (d.ubicacion) { document.getElementById('info-ubicacion').textContent = d.ubicacion; document.getElementById('contact-ubicacion-txt').textContent = d.ubicacion.split(',')[0]; }
+      if (d.github) { document.getElementById('info-github').textContent = d.github; document.getElementById('contact-github-txt').textContent = d.github; document.getElementById('contact-github').href = 'https://github.com/' + d.github; document.getElementById('r-github-lbl').textContent = d.github; }
+      if (d.email) { document.getElementById('info-email').textContent = d.email; document.getElementById('contact-email').href = 'mailto:' + d.email; document.getElementById('contact-email-txt').textContent = d.email; }
+      if (d.contactoMsg) document.getElementById('contacto-msg').textContent = d.contactoMsg;
+    }
+    function loadPerfilForm(d) { if (!d) return;['nombre', 'titulo', 'bio', 'ubicacion', 'github', 'email', 'contactoMsg'].forEach(k => { const el = document.getElementById('edit-' + k); if (el && d[k]) el.value = d[k]; }); }
 
-// ── AUTH ──
-const ADMIN_USER='menaGabriela',ADMIN_PASS='Gc030108$';
-let isLoggedIn=false;
-function doLogin(){
-  const u=document.getElementById('login-user').value.trim();
-  const p=document.getElementById('login-pass').value;
-  const err=document.getElementById('login-err');
-  if(u===ADMIN_USER&&p===ADMIN_PASS){
-    isLoggedIn=true;err.classList.remove('show');
-    closeWin('win-login','ico-admin');
-    document.getElementById('login-user').value='';
-    document.getElementById('login-pass').value='';
-    document.getElementById('ibox-admin').textContent='🔓';
-    document.querySelector('#tsk-admin .ticon').textContent='🔓';
-    updateEditHints(true);
-    switchTo('win-admin','ico-admin');
-  }else{err.classList.add('show');document.getElementById('login-pass').value='';document.getElementById('login-pass').focus();}
-}
-function doLogout(){
-  isLoggedIn=false;closeWin('win-admin','ico-admin');closeWin('win-config','ico-config');
-  document.getElementById('ibox-admin').textContent='🔐';
-  document.querySelector('#tsk-admin .ticon').textContent='🔐';
-  document.getElementById('tsk-admin')?.classList.remove('open-win');
-  updateEditHints(false);
-}
-function updateEditHints(on){
-  ['plataforma','aventura','carreras','shooter','clicker','defensa','colorswitch','roblox'].forEach(id=>{
-    const h=document.getElementById('ghint-'+id);const o=document.getElementById('govl-'+id);
-    if(h)h.textContent=on?'toca para subir':'';if(o)o.style.display=on?'':'none';
-  });
-}
+    // ── GAME EDIT ──
+    const gameDefaults = { plataforma: { name: 'Plataforma 2D', desc: 'Desplazamiento lateral, saltos, coleccionables y enemigos en Unity 2D.', tags: 'Tilemap,Physics 2D,Animator' }, aventura: { name: 'Aventura 3D', desc: 'Exploración en tercera persona, misiones y cámara Cinemachine.', tags: 'Third Person,Cinemachine,NavMesh' }, carreras: { name: 'Carreras 3D', desc: 'Física de vehículos, pistas cronometradas y sistema de posiciones.', tags: 'Rigidbody,Physics,Timer' }, shooter: { name: 'Shooter', desc: 'Proyectiles, oleadas de enemigos y partículas de impacto.', tags: 'Raycast,Particles,Enemy AI' }, clicker: { name: 'Clicker', desc: 'Recursos acumulables, mejoras desbloqueables y guardado con PlayerPrefs.', tags: 'Idle,UI Canvas,PlayerPrefs' }, defensa: { name: 'Tower Defense', desc: 'UI de niveles, tienda de torres, oleadas y sistema de monedas.', tags: 'UI Niveles,Tienda,Waves' }, colorswitch: { name: 'Color Switch 3D', desc: 'Mallas procedurales, colisiones por color y cámara FreeLook.', tags: 'Procedural Mesh,Cinemachine' }, roblox: { name: 'Mundo Roblox', desc: 'Tienda de ítems, estadísticas de jugador y paisaje en Lua.', tags: 'Lua,Tienda,Stats' } };
+    function loadGameEdit(gid) { const s = S.get('game_' + gid) || {}; const d = gameDefaults[gid]; document.getElementById('gedit-name').value = s.name || d.name; document.getElementById('gedit-desc').value = s.desc || d.desc; document.getElementById('gedit-tags').value = s.tags || d.tags; }
+    function saveGameEdit() { const gid = document.getElementById('game-edit-sel').value; const d = { name: document.getElementById('gedit-name').value, desc: document.getElementById('gedit-desc').value, tags: document.getElementById('gedit-tags').value }; S.set('game_' + gid, d); applyGameEdit(gid, d); showOk('save-ok-juego'); }
+    function applyGameEdit(gid, d) { const n = document.getElementById('gname-' + gid); const dc = document.getElementById('gdesc-' + gid); const t = document.getElementById('gtags-' + gid); if (n && d.name) n.textContent = d.name; if (dc && d.desc) dc.textContent = d.desc; if (t && d.tags) t.innerHTML = d.tags.split(',').map(t => `<span class="gtag-mini">${t.trim()}</span>`).join(''); }
 
-// ── PERFIL ──
-function savePerfil(){
-  const d={nombre:document.getElementById('edit-nombre').value,titulo:document.getElementById('edit-titulo').value,bio:document.getElementById('edit-bio').value,ubicacion:document.getElementById('edit-ubicacion').value,github:document.getElementById('edit-github').value,email:document.getElementById('edit-email').value,contactoMsg:document.getElementById('edit-contacto-msg').value};
-  S.set('perfil',d);applyPerfil(d);showOk('save-ok-perfil');
-}
-function applyPerfil(d){
-  if(!d)return;
-  if(d.nombre){document.getElementById('hero-nombre').innerHTML=d.nombre;document.getElementById('info-nombre').textContent=d.nombre;}
-  if(d.titulo){document.getElementById('hero-titulo').textContent='// '+d.titulo;document.getElementById('info-titulo').textContent=d.titulo;}
-  if(d.bio)document.getElementById('sobre-bio').textContent=d.bio;
-  if(d.ubicacion){document.getElementById('info-ubicacion').textContent=d.ubicacion;document.getElementById('contact-ubicacion-txt').textContent=d.ubicacion.split(',')[0];}
-  if(d.github){document.getElementById('info-github').textContent=d.github;document.getElementById('contact-github-txt').textContent=d.github;document.getElementById('contact-github').href='https://github.com/'+d.github;document.getElementById('r-github-lbl').textContent=d.github;}
-  if(d.email){document.getElementById('info-email').textContent=d.email;document.getElementById('contact-email').href='mailto:'+d.email;document.getElementById('contact-email-txt').textContent=d.email;}
-  if(d.contactoMsg)document.getElementById('contacto-msg').textContent=d.contactoMsg;
-}
-function loadPerfilForm(d){if(!d)return;['nombre','titulo','bio','ubicacion','github','email','contactoMsg'].forEach(k=>{const el=document.getElementById('edit-'+k);if(el&&d[k])el.value=d[k];});}
+    // ── COLORS ──
+    const defaultColors = { '--window': '#f0ede4', '--wborder': '#b8b0a0', '--ink': '#3a3228', '--ink2': '#7a6e62', '--pink': '#f4b8c8', '--lav': '#c8c0e8', '--mint': '#b8e8d0', '--yellow': '#f4e8a0', '--peach': '#f4d0b0', '--blue': '#a0c8e8' };
+    function previewColor(v, val) { document.documentElement.style.setProperty(v, val); }
+    function saveColors() { const s = {}; Object.keys(defaultColors).forEach(k => { const el = document.getElementById('clr-' + k.replace('--', '')); if (el) { s[k] = el.value; previewColor(k, el.value); } }); S.set('colors', s); showOk('save-ok-colores'); }
+    function resetColors() { Object.entries(defaultColors).forEach(([k, v]) => { previewColor(k, v); const el = document.getElementById('clr-' + k.replace('--', '')); if (el) el.value = v; }); S.del('colors'); }
+    function loadColors() { const s = S.get('colors'); if (!s) return; Object.entries(s).forEach(([k, v]) => { previewColor(k, v); const el = document.getElementById('clr-' + k.replace('--', '')); if (el) el.value = v; }); }
 
-// ── GAME EDIT ──
-const gameDefaults={plataforma:{name:'Plataforma 2D',desc:'Desplazamiento lateral, saltos, coleccionables y enemigos en Unity 2D.',tags:'Tilemap,Physics 2D,Animator'},aventura:{name:'Aventura 3D',desc:'Exploración en tercera persona, misiones y cámara Cinemachine.',tags:'Third Person,Cinemachine,NavMesh'},carreras:{name:'Carreras 3D',desc:'Física de vehículos, pistas cronometradas y sistema de posiciones.',tags:'Rigidbody,Physics,Timer'},shooter:{name:'Shooter',desc:'Proyectiles, oleadas de enemigos y partículas de impacto.',tags:'Raycast,Particles,Enemy AI'},clicker:{name:'Clicker',desc:'Recursos acumulables, mejoras desbloqueables y guardado con PlayerPrefs.',tags:'Idle,UI Canvas,PlayerPrefs'},defensa:{name:'Tower Defense',desc:'UI de niveles, tienda de torres, oleadas y sistema de monedas.',tags:'UI Niveles,Tienda,Waves'},colorswitch:{name:'Color Switch 3D',desc:'Mallas procedurales, colisiones por color y cámara FreeLook.',tags:'Procedural Mesh,Cinemachine'},roblox:{name:'Mundo Roblox',desc:'Tienda de ítems, estadísticas de jugador y paisaje en Lua.',tags:'Lua,Tienda,Stats'}};
-function loadGameEdit(gid){const s=S.get('game_'+gid)||{};const d=gameDefaults[gid];document.getElementById('gedit-name').value=s.name||d.name;document.getElementById('gedit-desc').value=s.desc||d.desc;document.getElementById('gedit-tags').value=s.tags||d.tags;}
-function saveGameEdit(){const gid=document.getElementById('game-edit-sel').value;const d={name:document.getElementById('gedit-name').value,desc:document.getElementById('gedit-desc').value,tags:document.getElementById('gedit-tags').value};S.set('game_'+gid,d);applyGameEdit(gid,d);showOk('save-ok-juego');}
-function applyGameEdit(gid,d){const n=document.getElementById('gname-'+gid);const dc=document.getElementById('gdesc-'+gid);const t=document.getElementById('gtags-'+gid);if(n&&d.name)n.textContent=d.name;if(dc&&d.desc)dc.textContent=d.desc;if(t&&d.tags)t.innerHTML=d.tags.split(',').map(t=>`<span class="gtag-mini">${t.trim()}</span>`).join('');}
+    // ── BACKGROUND ──
+    const bgPresets = { default: 'radial-gradient(ellipse 80% 40% at 50% 0%,#e8f4fb 0%,transparent 60%),linear-gradient(180deg,#c8dfe8 0%,#d4e8c2 82%,#c0d09a 100%)', sunset: 'linear-gradient(180deg,#f4a060,#f4c080 40%,#e8d0a0)', night: 'linear-gradient(180deg,#1a1a3a,#2a2a5a 50%,#1a2a1a)', rose: 'linear-gradient(180deg,#f0c8d8,#f8e0e8 50%,#f0d8c8)', forest: 'linear-gradient(180deg,#608060,#80a860 50%,#405030)', ocean: 'linear-gradient(180deg,#4080c0,#60a0e0 40%,#a0c8f0)', lavender: 'linear-gradient(180deg,#c0a8e0,#d8c8f0 50%,#e8d8f8)', dark: 'linear-gradient(180deg,#1a1a1a,#2a2a2a)' };
+    function setBgPreset(key, el) { document.querySelectorAll('.bg-preset').forEach(p => p.classList.remove('selected')); el.classList.add('selected'); const desk = document.getElementById('desktop'); const bgImg = document.getElementById('desktop-bg-img'); bgImg.src = ''; bgImg.style.display = 'none'; desk.classList.remove('has-bg'); desk.style.background = bgPresets[key]; key === 'default' ? desk.classList.remove('no-clouds') : desk.classList.add('no-clouds'); S.set('bg', { type: 'preset', key }); }
+    function loadBgFile(input) { const file = input.files[0]; if (!file) return; const r = new FileReader(); r.onload = e => { const src = e.target.result; applyBgImage(src); try { S.set('bg', { type: 'image', src }) } catch (ex) { }; document.querySelectorAll('.bg-preset').forEach(p => p.classList.remove('selected')); }; r.readAsDataURL(file); input.value = ''; }
+    function applyBgImage(src) { const desk = document.getElementById('desktop'); const bgImg = document.getElementById('desktop-bg-img'); bgImg.src = src; bgImg.style.display = 'block'; desk.classList.add('has-bg'); desk.style.background = 'none'; desk.classList.add('no-clouds'); }
+    function setOverlay(val) { document.getElementById('overlay-val').textContent = val + '%'; document.getElementById('desktop-overlay').style.background = 'rgba(0,0,0,' + (val / 100) + ')'; S.set('overlay', val); }
+    function resetBg() { setBgPreset('default', document.querySelector('.bg-preset')); setOverlay(0); document.getElementById('overlay-range').value = 0; S.del('bg'); S.del('overlay'); }
+    function loadBg() { const bg = S.get('bg'); if (!bg) return; if (bg.type === 'preset') { const presets = document.querySelectorAll('.bg-preset'); const keys = ['default', 'sunset', 'night', 'rose', 'forest', 'ocean', 'lavender', 'dark']; const idx = keys.indexOf(bg.key); setBgPreset(bg.key, presets[idx >= 0 ? idx : 0]); } else if (bg.type === 'image' && bg.src) applyBgImage(bg.src); const ov = S.get('overlay'); if (ov != null) { setOverlay(ov); document.getElementById('overlay-range').value = ov; } }
 
-// ── COLORS ──
-const defaultColors={'--window':'#f0ede4','--wborder':'#b8b0a0','--ink':'#3a3228','--ink2':'#7a6e62','--pink':'#f4b8c8','--lav':'#c8c0e8','--mint':'#b8e8d0','--yellow':'#f4e8a0','--peach':'#f4d0b0','--blue':'#a0c8e8'};
-function previewColor(v,val){document.documentElement.style.setProperty(v,val);}
-function saveColors(){const s={};Object.keys(defaultColors).forEach(k=>{const el=document.getElementById('clr-'+k.replace('--',''));if(el){s[k]=el.value;previewColor(k,el.value);}});S.set('colors',s);showOk('save-ok-colores');}
-function resetColors(){Object.entries(defaultColors).forEach(([k,v])=>{previewColor(k,v);const el=document.getElementById('clr-'+k.replace('--',''));if(el)el.value=v;});S.del('colors');}
-function loadColors(){const s=S.get('colors');if(!s)return;Object.entries(s).forEach(([k,v])=>{previewColor(k,v);const el=document.getElementById('clr-'+k.replace('--',''));if(el)el.value=v;});}
+    // ── ICON UPLOAD ──
+    let currentIconTarget = null;
+    function triggerIconImg(name) { currentIconTarget = name; document.getElementById('ico-file-input').click(); }
+    function loadIconFile(input) { const file = input.files[0]; if (!file || !currentIconTarget) return; const id = currentIconTarget; const r = new FileReader(); r.onload = e => { const src = e.target.result; setIconSrc(id, src); try { S.set('icon_' + id, src) } catch (ex) { } }; r.readAsDataURL(file); input.value = ''; currentIconTarget = null; }
+    function setIconSrc(id, src) { const ibox = document.getElementById('ibox-' + id); if (ibox) ibox.innerHTML = `<img src="${src}" alt="">`; const cfg = document.getElementById('cfg-ibox-' + id); if (cfg) cfg.innerHTML = `<img src="${src}" alt="">`; }
+    function resetIcon(name, emoji, bg) { const ibox = document.getElementById('ibox-' + name); if (ibox) { ibox.innerHTML = emoji; } const cfg = document.getElementById('cfg-ibox-' + name); if (cfg) { cfg.innerHTML = `<span>${emoji}</span>`; } S.del('icon_' + name); }
+    function loadIcons() { ['bienvenida', 'sobre', 'habilidades', 'juegos', 'web', 'contacto'].forEach(id => { const src = S.get('icon_' + id); if (src) setIconSrc(id, src); }); }
 
-// ── BACKGROUND ──
-const bgPresets={default:'radial-gradient(ellipse 80% 40% at 50% 0%,#e8f4fb 0%,transparent 60%),linear-gradient(180deg,#c8dfe8 0%,#d4e8c2 82%,#c0d09a 100%)',sunset:'linear-gradient(180deg,#f4a060,#f4c080 40%,#e8d0a0)',night:'linear-gradient(180deg,#1a1a3a,#2a2a5a 50%,#1a2a1a)',rose:'linear-gradient(180deg,#f0c8d8,#f8e0e8 50%,#f0d8c8)',forest:'linear-gradient(180deg,#608060,#80a860 50%,#405030)',ocean:'linear-gradient(180deg,#4080c0,#60a0e0 40%,#a0c8f0)',lavender:'linear-gradient(180deg,#c0a8e0,#d8c8f0 50%,#e8d8f8)',dark:'linear-gradient(180deg,#1a1a1a,#2a2a2a)'};
-function setBgPreset(key,el){document.querySelectorAll('.bg-preset').forEach(p=>p.classList.remove('selected'));el.classList.add('selected');const desk=document.getElementById('desktop');const bgImg=document.getElementById('desktop-bg-img');bgImg.src='';bgImg.style.display='none';desk.classList.remove('has-bg');desk.style.background=bgPresets[key];key==='default'?desk.classList.remove('no-clouds'):desk.classList.add('no-clouds');S.set('bg',{type:'preset',key});}
-function loadBgFile(input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{const src=e.target.result;applyBgImage(src);try{S.set('bg',{type:'image',src})}catch(ex){}; document.querySelectorAll('.bg-preset').forEach(p=>p.classList.remove('selected'));};r.readAsDataURL(file);input.value='';}
-function applyBgImage(src){const desk=document.getElementById('desktop');const bgImg=document.getElementById('desktop-bg-img');bgImg.src=src;bgImg.style.display='block';desk.classList.add('has-bg');desk.style.background='none';desk.classList.add('no-clouds');}
-function setOverlay(val){document.getElementById('overlay-val').textContent=val+'%';document.getElementById('desktop-overlay').style.background='rgba(0,0,0,'+(val/100)+')';S.set('overlay',val);}
-function resetBg(){setBgPreset('default',document.querySelector('.bg-preset'));setOverlay(0);document.getElementById('overlay-range').value=0;S.del('bg');S.del('overlay');}
-function loadBg(){const bg=S.get('bg');if(!bg)return;if(bg.type==='preset'){const presets=document.querySelectorAll('.bg-preset');const keys=['default','sunset','night','rose','forest','ocean','lavender','dark'];const idx=keys.indexOf(bg.key);setBgPreset(bg.key,presets[idx>=0?idx:0]);}else if(bg.type==='image'&&bg.src)applyBgImage(bg.src);const ov=S.get('overlay');if(ov!=null){setOverlay(ov);document.getElementById('overlay-range').value=ov;}}
+    // ── GAME IMAGES ──
+    let currentGameTarget = null;
+    function triggerGameImg(gid) { if (!isLoggedIn) return; currentGameTarget = gid; document.getElementById('game-file-input').click(); }
+    function loadGameFile(input) { const file = input.files[0]; if (!file || !currentGameTarget) return; const id = currentGameTarget; const r = new FileReader(); r.onload = e => { const src = e.target.result; applyGameImg(id, src); try { S.set('gimg_' + id, src) } catch (ex) { } }; r.readAsDataURL(file); input.value = ''; currentGameTarget = null; }
+    function applyGameImg(id, src) { const img = document.getElementById('gimg-' + id); const noimg = document.getElementById('gnoimg-' + id); if (img) { img.src = src; img.style.display = 'block'; } if (noimg) noimg.style.display = 'none'; const ci = document.getElementById('cfg-gimg-' + id); const cn = document.getElementById('cfg-gnoimg-' + id); if (ci) { ci.src = src; ci.style.display = 'block'; } if (cn) cn.style.display = 'none'; }
+    function loadGameImgs() { ['plataforma', 'aventura', 'carreras', 'shooter', 'clicker', 'defensa', 'colorswitch', 'roblox'].forEach(id => { const src = S.get('gimg_' + id); if (src) applyGameImg(id, src); }); }
 
-// ── ICON UPLOAD ──
-let currentIconTarget=null;
-function triggerIconImg(name){currentIconTarget=name;document.getElementById('ico-file-input').click();}
-function loadIconFile(input){const file=input.files[0];if(!file||!currentIconTarget)return;const id=currentIconTarget;const r=new FileReader();r.onload=e=>{const src=e.target.result;setIconSrc(id,src);try{S.set('icon_'+id,src)}catch(ex){}};r.readAsDataURL(file);input.value='';currentIconTarget=null;}
-function setIconSrc(id,src){const ibox=document.getElementById('ibox-'+id);if(ibox)ibox.innerHTML=`<img src="${src}" alt="">`;const cfg=document.getElementById('cfg-ibox-'+id);if(cfg)cfg.innerHTML=`<img src="${src}" alt="">`;}
-function resetIcon(name,emoji,bg){const ibox=document.getElementById('ibox-'+name);if(ibox){ibox.innerHTML=emoji;}const cfg=document.getElementById('cfg-ibox-'+name);if(cfg){cfg.innerHTML=`<span>${emoji}</span>`;}S.del('icon_'+name);}
-function loadIcons(){['bienvenida','sobre','habilidades','juegos','web','contacto'].forEach(id=>{const src=S.get('icon_'+id);if(src)setIconSrc(id,src);});}
+    // ── PROJECTS ──
+    let customProjects = [];
+    function addProject() { const name = document.getElementById('pf-name').value.trim(); if (!name) { document.getElementById('pf-name').focus(); return; } const proj = { id: Date.now(), name, type: document.getElementById('pf-type').value, desc: document.getElementById('pf-desc').value.trim(), tags: document.getElementById('pf-tags').value.trim(), icon: document.getElementById('pf-icon').value.trim() || '📦' }; customProjects.push(proj); S.set('customProjects', customProjects); renderAdminProjList(); renderProjectCard(proj);['pf-name', 'pf-desc', 'pf-tags', 'pf-icon'].forEach(id => document.getElementById(id).value = ''); }
+    function deleteProject(id) { customProjects = customProjects.filter(p => p.id !== id); S.set('customProjects', customProjects); document.getElementById('custom-proj-' + id)?.remove(); renderAdminProjList(); }
+    function renderAdminProjList() { const list = document.getElementById('adm-proj-list'); if (!customProjects.length) { list.innerHTML = '<div style="font-family:var(--mono);font-size:9px;color:var(--ink3);text-align:center;padding:.9rem">Sin proyectos aún.</div>'; return; } list.innerHTML = customProjects.map(p => `<div class="adm-pitem"><span class="ap-icon">${p.icon}</span><div class="ap-info"><div class="ap-name">${p.name}</div><div class="ap-type">${p.type} · ${p.tags || ''}</div></div><button class="ap-del" onclick="deleteProject(${p.id})">🗑️</button></div>`).join(''); }
+    function renderProjectCard(proj) { const tagBg = { web: 'var(--mint)', '2d': 'var(--pink)', '3d': 'var(--lav)', roblox: 'var(--yellow)', narrativo: 'var(--peach)' }; const tagsSplit = proj.tags ? proj.tags.split(',').map(t => t.trim()) : []; if (['2d', '3d', 'roblox'].includes(proj.type)) { const tc = { '2d': 't2d', '3d': 't3d', 'roblox': 'troblox' }; const card = document.createElement('div'); card.className = 'gcard'; card.dataset.type = proj.type; card.id = 'custom-proj-' + proj.id; card.innerHTML = `<div class="gthumb" style="background:linear-gradient(135deg,#e8e0f0,#d0e8d0)"><div class="noimg"><span>${proj.icon}</span></div></div><div class="gbody"><span class="gtag ${tc[proj.type] || 't3d'}">${proj.type.toUpperCase()}</span><div class="gname">${proj.name}</div><p class="gdesc">${proj.desc}</p><div class="gtags-row">${tagsSplit.map(t => `<span class="gtag-mini">${t}</span>`).join('')}</div></div>`; document.getElementById('gGrid').appendChild(card); } else { const card = document.createElement('div'); card.className = 'pcard'; card.id = 'custom-proj-' + proj.id; card.innerHTML = `<span class="pico">${proj.icon}</span><div><div class="pname">${proj.name}</div><div class="pdesc">${proj.desc}</div><div class="ptags">${tagsSplit.map(t => `<span class="ptag" style="background:${tagBg[proj.type] || 'var(--mint)'}">${t}</span>`).join('')}</div></div>`; document.getElementById('web-proj-list').appendChild(card); } }
 
-// ── GAME IMAGES ──
-let currentGameTarget=null;
-function triggerGameImg(gid){if(!isLoggedIn)return;currentGameTarget=gid;document.getElementById('game-file-input').click();}
-function loadGameFile(input){const file=input.files[0];if(!file||!currentGameTarget)return;const id=currentGameTarget;const r=new FileReader();r.onload=e=>{const src=e.target.result;applyGameImg(id,src);try{S.set('gimg_'+id,src)}catch(ex){}};r.readAsDataURL(file);input.value='';currentGameTarget=null;}
-function applyGameImg(id,src){const img=document.getElementById('gimg-'+id);const noimg=document.getElementById('gnoimg-'+id);if(img){img.src=src;img.style.display='block';}if(noimg)noimg.style.display='none';const ci=document.getElementById('cfg-gimg-'+id);const cn=document.getElementById('cfg-gnoimg-'+id);if(ci){ci.src=src;ci.style.display='block';}if(cn)cn.style.display='none';}
-function loadGameImgs(){['plataforma','aventura','carreras','shooter','clicker','defensa','colorswitch','roblox'].forEach(id=>{const src=S.get('gimg_'+id);if(src)applyGameImg(id,src);});}
+    // ── UTILS ──
+    function showOk(id) { const el = document.getElementById(id); if (!el) return; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2500); }
 
-// ── PROJECTS ──
-let customProjects=[];
-function addProject(){const name=document.getElementById('pf-name').value.trim();if(!name){document.getElementById('pf-name').focus();return;}const proj={id:Date.now(),name,type:document.getElementById('pf-type').value,desc:document.getElementById('pf-desc').value.trim(),tags:document.getElementById('pf-tags').value.trim(),icon:document.getElementById('pf-icon').value.trim()||'📦'};customProjects.push(proj);S.set('customProjects',customProjects);renderAdminProjList();renderProjectCard(proj);['pf-name','pf-desc','pf-tags','pf-icon'].forEach(id=>document.getElementById(id).value='');}
-function deleteProject(id){customProjects=customProjects.filter(p=>p.id!==id);S.set('customProjects',customProjects);document.getElementById('custom-proj-'+id)?.remove();renderAdminProjList();}
-function renderAdminProjList(){const list=document.getElementById('adm-proj-list');if(!customProjects.length){list.innerHTML='<div style="font-family:var(--mono);font-size:9px;color:var(--ink3);text-align:center;padding:.9rem">Sin proyectos aún.</div>';return;}list.innerHTML=customProjects.map(p=>`<div class="adm-pitem"><span class="ap-icon">${p.icon}</span><div class="ap-info"><div class="ap-name">${p.name}</div><div class="ap-type">${p.type} · ${p.tags||''}</div></div><button class="ap-del" onclick="deleteProject(${p.id})">🗑️</button></div>`).join('');}
-function renderProjectCard(proj){const tagBg={web:'var(--mint)','2d':'var(--pink)','3d':'var(--lav)',roblox:'var(--yellow)',narrativo:'var(--peach)'};const tagsSplit=proj.tags?proj.tags.split(',').map(t=>t.trim()):[];if(['2d','3d','roblox'].includes(proj.type)){const tc={'2d':'t2d','3d':'t3d','roblox':'troblox'};const card=document.createElement('div');card.className='gcard';card.dataset.type=proj.type;card.id='custom-proj-'+proj.id;card.innerHTML=`<div class="gthumb" style="background:linear-gradient(135deg,#e8e0f0,#d0e8d0)"><div class="noimg"><span>${proj.icon}</span></div></div><div class="gbody"><span class="gtag ${tc[proj.type]||'t3d'}">${proj.type.toUpperCase()}</span><div class="gname">${proj.name}</div><p class="gdesc">${proj.desc}</p><div class="gtags-row">${tagsSplit.map(t=>`<span class="gtag-mini">${t}</span>`).join('')}</div></div>`;document.getElementById('gGrid').appendChild(card);}else{const card=document.createElement('div');card.className='pcard';card.id='custom-proj-'+proj.id;card.innerHTML=`<span class="pico">${proj.icon}</span><div><div class="pname">${proj.name}</div><div class="pdesc">${proj.desc}</div><div class="ptags">${tagsSplit.map(t=>`<span class="ptag" style="background:${tagBg[proj.type]||'var(--mint)'}">${t}</span>`).join('')}</div></div>`;document.getElementById('web-proj-list').appendChild(card);}}
-
-// ── UTILS ──
-function showOk(id){const el=document.getElementById(id);if(!el)return;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500);}
-
-// ── BOOT ──
-window.addEventListener('load',()=>{
-  loadColors();loadBg();loadIcons();loadGameImgs();
-  const perfil=S.get('perfil');if(perfil){applyPerfil(perfil);loadPerfilForm(perfil);}
-  ['plataforma','aventura','carreras','shooter','clicker','defensa','colorswitch','roblox'].forEach(gid=>{const d=S.get('game_'+gid);if(d)applyGameEdit(gid,d);});
-  const cp=S.get('customProjects');if(cp&&Array.isArray(cp)){customProjects=cp;cp.forEach(renderProjectCard);renderAdminProjList();}
-  loadGameEdit('plataforma');
-  // open welcome — on mobile it fills screen
-  openWin('win-bienvenida','ico-bienvenida');
-});
-</script>
+    // ── BOOT ──
+    window.addEventListener('load', () => {
+      loadColors(); loadBg(); loadIcons(); loadGameImgs();
+      const perfil = S.get('perfil'); if (perfil) { applyPerfil(perfil); loadPerfilForm(perfil); }
+      ['plataforma', 'aventura', 'carreras', 'shooter', 'clicker', 'defensa', 'colorswitch', 'roblox'].forEach(gid => { const d = S.get('game_' + gid); if (d) applyGameEdit(gid, d); });
+      const cp = S.get('customProjects'); if (cp && Array.isArray(cp)) { customProjects = cp; cp.forEach(renderProjectCard); renderAdminProjList(); }
+      loadGameEdit('plataforma');
+      // open welcome — on mobile it fills screen
+      openWin('win-bienvenida', 'ico-bienvenida');
+    });
+  </script>
 </body>
+
 </html>
